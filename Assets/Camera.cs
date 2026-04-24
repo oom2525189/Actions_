@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private float Speed = 20;
-    private float mouseInputX;
-    private float mouseInputY;
+    public float mouseSensitivity = 300f;
+    private float xRotation = 0f;
 
-    // Update is called once per frame
     void Update()
     {
-        mouseInputX = Input.GetAxis("Mouse X");
-        mouseInputY = Input.GetAxis("Mouse Y");
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        transform.Rotate(0, mouseInputX * Time.deltaTime * Speed, 0);
-        transform.Rotate(-mouseInputY * Time.deltaTime * Speed, 0,0);
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        // è„â∫ÇæÇØâÒì]ÅiZÇÕäÆëSÇ…0Åj
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }

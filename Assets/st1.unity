@@ -1573,7 +1573,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1593,6 +1593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b532412cc5185134b814355cf1ce9dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSensitivity: 300
 --- !u!1001 &983275471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1699,6 +1700,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2179a5f285f74714b8480018720787bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 10
+  mouseSensitivity: 300
 --- !u!54 &1020623071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1709,7 +1712,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1733,7 +1736,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020623069}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 77dfcb0788a0c9a42b3b33ee64250afd, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1807,7 +1810,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020623069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 1.73}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

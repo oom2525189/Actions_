@@ -1,55 +1,36 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class player : MonoBehaviour
 {
     private Rigidbody rb;
-    private float moveSpeed = 10;
-    private float cameraSpeed = 1;
-    // Start is called before the first frame update
+    public float moveSpeed = 10f;
+    public float mouseSensitivity = 300f;
+
+    private float mouseX;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // マウスをロック
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+    void Update()
+    {
+        // マウス左右（体を回転）
+        mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        transform.Rotate(0f, mouseX, 0f);
+    }
+
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(transform.forward * moveSpeed);
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(-transform.forward * moveSpeed);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(transform.right * moveSpeed);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(-transform.right * moveSpeed);
-        }
-    }
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.W) ||
-            Input.GetKeyUp(KeyCode.A) ||
-            Input.GetKeyUp(KeyCode.S) ||
-            Input.GetKeyUp(KeyCode.D))
-        {
-            rb.velocity = Vector3.zero;
-        }
+        float h = Input.GetAxis("Horizontal"); // A D
+        float v = Input.GetAxis("Vertical");   // W S
 
-        //if (Input.GetMouseButton(0))
-        //{
-        //    float x = Input.GetAxis("Mouse X") * cameraSpeed;
-        //    if (Mathf.Abs(x) > 0.1f)
-        //    {
-        //        transform.RotateAround(transform.position, Vector3.up, x);
-        //    }
-        //}
+        Vector3 move = transform.forward * v + transform.right * h;
+        rb.AddForce(move * moveSpeed);
     }
 }
