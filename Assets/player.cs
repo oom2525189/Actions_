@@ -27,10 +27,11 @@ public class player : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxis("Horizontal"); // A D
-        float v = Input.GetAxis("Vertical");   // W S
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
 
         Vector3 move = transform.forward * v + transform.right * h;
-        rb.AddForce(move * moveSpeed);
+
+        rb.velocity = new Vector3(move.x * moveSpeed, rb.velocity.y, move.z * moveSpeed);
     }
 }
