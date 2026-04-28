@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class operation : MonoBehaviour
+public class operationTransition : MonoBehaviour
 {
     public void OnClick()
     {

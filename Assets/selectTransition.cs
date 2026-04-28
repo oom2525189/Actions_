@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class select : MonoBehaviour
+public class selectTransition : MonoBehaviour
 {
     public void OnClick()
     {
