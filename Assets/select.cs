@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Button : MonoBehaviour
+public class select : MonoBehaviour
 {
     public void OnClick()
     {
-        Debug.Log("押された!");  // ログを出力
+        SceneManager.LoadScene("select");
     }
 }
