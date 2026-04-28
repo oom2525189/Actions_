@@ -16,12 +16,16 @@ public class hammer : MonoBehaviour
 
     private float currentAngle;
 
+    public AudioClip sound1;
+    AudioSource audioSource;
+
     void Start()
     {
         currentAngle = baseAngle;
         Hammer_01.localRotation = Quaternion.Euler(currentAngle, 0f, 90f);
 
         hammerCollider.enabled = false; // 最初はOFF
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,6 +33,7 @@ public class hammer : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isSwinging)
         {
             StartCoroutine(Swing());
+            audioSource.PlayOneShot(sound1);
         }
     }
 
