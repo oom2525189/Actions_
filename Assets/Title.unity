@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 57785210}
   - component: {fileID: 57785209}
   - component: {fileID: 57785208}
+  - component: {fileID: 57785211}
   m_Layer: 5
   m_Name: startbutton
   m_TagString: Untagged
@@ -203,7 +204,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 57785209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 57785211}
+        m_TargetAssemblyTypeName: st1TP, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &57785209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +255,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57785206}
   m_CullTransparentMesh: 1
+--- !u!114 &57785211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57785206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd8adc4099173940b4a45bdf314e070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &91909370
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,8 +689,9 @@ GameObject:
   - component: {fileID: 563644190}
   - component: {fileID: 563644189}
   - component: {fileID: 563644188}
+  - component: {fileID: 563644191}
   m_Layer: 5
-  m_Name: setumeibutton
+  m_Name: operationbutton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +761,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 563644189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 563644191}
+        m_TargetAssemblyTypeName: operation, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563644189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +812,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563644186}
   m_CullTransparentMesh: 1
+--- !u!114 &563644191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563644186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0cb6105120617c4d9dfbccc7e3d35cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &656360037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1345,6 +1395,7 @@ GameObject:
   - component: {fileID: 783345072}
   - component: {fileID: 783345071}
   - component: {fileID: 783345070}
+  - component: {fileID: 783345073}
   m_Layer: 5
   m_Name: selectbutton
   m_TagString: Untagged
@@ -1416,7 +1467,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 783345071}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 783345073}
+        m_TargetAssemblyTypeName: select, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &783345071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1455,6 +1518,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783345068}
   m_CullTransparentMesh: 1
+--- !u!114 &783345073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783345068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8cf97c797a089b439cb2e307ed86bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &903303502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2066,7 +2141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: setumei
+  m_text: operation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
