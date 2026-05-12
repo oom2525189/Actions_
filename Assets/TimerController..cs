@@ -41,7 +41,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
 
         // UI更新
-        timerText.text = "制限時間 : " + Mathf.Ceil(timeLimit).ToString();
+        timerText.text = "のこり" + Mathf.Ceil(timeLimit).ToString();
 
         // 時間切れ
         if (timeLimit <= 0)
