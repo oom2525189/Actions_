@@ -8,7 +8,14 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public float timeLimit = 60f;
 
+    // 通常タイマー
     public TMP_Text timerText;
+
+    // 中央の大きい数字
+    public TMP_Text centerTimerText;
+
+    // 白フラッシュ
+    public Image flashImage;
 
     public GameObject gameOverPanel;
 
@@ -20,6 +27,13 @@ public class NewBehaviourScript : MonoBehaviour
         {
             gameOverPanel.SetActive(false);
         }
+
+        centerTimerText.gameObject.SetActive(false);
+
+        // フラッシュ透明化
+        Color color = Color.white;
+        color.a = 0f;
+        flashImage.color = color;
     }
 
     void Update()
@@ -33,33 +47,87 @@ public class NewBehaviourScript : MonoBehaviour
             timeLimit = 0;
         }
 
-        // 表示する秒数
         int displayTime = Mathf.CeilToInt(timeLimit);
 
-        // 残り10秒以下
+        // ===== 上のタイマー =====
+
         if (timeLimit <= 10f)
         {
-            // 点滅処理
-            bool blink = Mathf.FloorToInt(Time.time * 4) % 2 == 0;
+            bool blink =
+                Mathf.FloorToInt(Time.time * 4) % 2 == 0;
 
             if (blink)
             {
-                // 数字だけ赤
-                timerText.text = "Time : <color=red>" + displayTime + "</color>";
+                timerText.text =
+                    "Time : <color=red>" + displayTime + "</color>";
             }
             else
             {
-                // 数字を透明にする
-                timerText.text = "Time : <color=#00000000>" + displayTime + "</color>";
+                timerText.text =
+                    "Time : <color=#00000000>" + displayTime + "</color>";
             }
         }
         else
         {
-            // 通常表示
             timerText.text = "Time : " + displayTime;
         }
 
-        // 時間切れ
+        // ===== 残り5秒演出 =====
+
+        if (timeLimit <= 5f && timeLimit > 0)
+        {
+            centerTimerText.gameObject.SetActive(true);
+
+            // 点滅
+            bool centerBlink =
+                Mathf.FloorToInt(Time.time * 4) % 2 == 0;
+
+            if (centerBlink)
+            {
+                centerTimerText.text =
+                    "<color=red>" + displayTime + "</color>";
+            }
+            else
+            {
+                centerTimerText.text =
+                    "<color=#00000000>" + displayTime + "</color>";
+            }
+
+            // ===== 拡大縮小 =====
+
+            float scale =
+                1f + Mathf.Abs(Mathf.Sin(Time.time * 10f)) * 0.3f;
+
+            centerTimerText.transform.localScale =
+                Vector3.one * scale;
+
+            // ===== 白フラッシュ =====
+
+            float alpha =
+                Mathf.Abs(Mathf.Sin(Time.time * 8f)) * 0.3f;
+
+            Color flashColor = Color.white;
+            flashColor.a = alpha;
+
+            flashImage.color = flashColor;
+        }
+        else
+        {
+            centerTimerText.gameObject.SetActive(false);
+
+            // サイズ戻す
+            centerTimerText.transform.localScale =
+                Vector3.one;
+
+            // フラッシュ消す
+            Color flashColor = Color.white;
+            flashColor.a = 0f;
+
+            flashImage.color = flashColor;
+        }
+
+        // ===== 時間切れ =====
+
         if (timeLimit <= 0)
         {
             GameOver();
