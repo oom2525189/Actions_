@@ -1735,6 +1735,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7614acfd37724644e886208938123853, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1020623069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2016,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 2042042194}
+=======
+>>>>>>> parent of 755e330 (a)
 --- !u!1001 &1034344721
 PrefabInstance:
   m_ObjectHideFlags: 0
