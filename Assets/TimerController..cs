@@ -6,20 +6,16 @@ using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    // 制限時間（秒）
     public float timeLimit = 60f;
 
-    // UIテキスト
     public TMP_Text timerText;
 
-    // ゲーム終了表示
     public GameObject gameOverPanel;
 
     private bool isGameOver = false;
 
     void Start()
     {
-        // パネルを非表示
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -28,20 +24,40 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        // ゲーム終了後は処理しない
         if (isGameOver) return;
 
-        // 時間を減らす
         timeLimit -= Time.deltaTime;
 
-        // 0未満にならないように
         if (timeLimit < 0)
         {
             timeLimit = 0;
         }
 
-        // UI更新
-        timerText.text = "のこり" + Mathf.Ceil(timeLimit).ToString();
+        // 表示する秒数
+        int displayTime = Mathf.CeilToInt(timeLimit);
+
+        // 残り10秒以下
+        if (timeLimit <= 10f)
+        {
+            // 点滅処理
+            bool blink = Mathf.FloorToInt(Time.time * 4) % 2 == 0;
+
+            if (blink)
+            {
+                // 数字だけ赤
+                timerText.text = "Time : <color=red>" + displayTime + "</color>";
+            }
+            else
+            {
+                // 数字を透明にする
+                timerText.text = "Time : <color=#00000000>" + displayTime + "</color>";
+            }
+        }
+        else
+        {
+            // 通常表示
+            timerText.text = "Time : " + displayTime;
+        }
 
         // 時間切れ
         if (timeLimit <= 0)
@@ -56,13 +72,11 @@ public class NewBehaviourScript : MonoBehaviour
 
         Debug.Log("ゲーム終了");
 
-        // パネル表示
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
         }
 
-        // ゲーム停止
         Time.timeScale = 0f;
     }
 }
