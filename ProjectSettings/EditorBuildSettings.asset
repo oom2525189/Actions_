@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/matumoto/matumoto.unity
     guid: ce7993a58820be642a34fdf111b3dda9
   - enabled: 0
+    path: Assets/Scenes/kuria.unity
+    guid: 08e91f3728602ca4f88c776328ac024e
+  - enabled: 0
     path: Assets/st2.unity
     guid: ba3ab157c70829e40974469545ccc1f5
   - enabled: 0
@@ -41,8 +44,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/st1.unity
     guid: 407ffa806fc884649bbdca893985784f
-  - enabled: 1
-    path: Assets/Scenes/kuria.unity
-    guid: 08e91f3728602ca4f88c776328ac024e
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
