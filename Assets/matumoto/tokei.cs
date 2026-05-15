@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class tokei : MonoBehaviour
 {
 
-   
-    
+    public GameObject hahennPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +35,15 @@ public class tokei : MonoBehaviour
 
     private void OnDestroy()
     {
-        tyekka ty; //呼ぶスクリプトにあだなつける
-        GameObject obj = GameObject.Find("kuriatyekka"); //kuriatyekkaっていうオブジェクトを探す
-        ty = obj.GetComponent<tyekka>(); //付いているスクリプトを取得
+       Instantiate(hahennPrefab, this.transform.position, Quaternion.identity); //弾を生成
 
-        ty.hanntei++;
 
-        SceneManager.LoadScene("kuria");
+        //tyekka ty; //呼ぶスクリプトにあだなつける
+        //GameObject obj = GameObject.Find("kuriatyekka"); //kuriatyekkaっていうオブジェクトを探す
+        //ty = obj.GetComponent<tyekka>(); //付いているスクリプトを取得
+
+        //ty.hanntei++;
+
+        //SceneManager.LoadScene("kuria");
     }
 }
