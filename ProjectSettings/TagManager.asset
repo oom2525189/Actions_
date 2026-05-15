@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hanma
+  - ui
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Clock
   - Water
   - UI
   - 
