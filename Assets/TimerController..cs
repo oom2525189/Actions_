@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -17,16 +18,16 @@ public class NewBehaviourScript : MonoBehaviour
     // 白フラッシュ
     public Image flashImage;
 
-    public GameObject gameOverPanel;
+    //public GameObject gameOverPanel;
 
     private bool isGameOver = false;
 
     void Start()
     {
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(false);
-        }
+        //if (gameOverPanel != null)
+        //{
+        //    gameOverPanel.SetActive(false);
+        //}
 
         centerTimerText.gameObject.SetActive(false);
 
@@ -140,10 +141,11 @@ public class NewBehaviourScript : MonoBehaviour
 
         Debug.Log("ゲーム終了");
 
-        if (gameOverPanel != null)
-        {
-            gameOverPanel.SetActive(true);
-        }
+        SceneManager.LoadScene("gameover");
+        //if (gameOverPanel != null)
+        //{
+        //    gameOverPanel.SetActive(true);
+        //}
 
         Time.timeScale = 0f;
     }
