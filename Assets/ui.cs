@@ -8,10 +8,10 @@ public class ui : MonoBehaviour
 {
     public UnityEngine.Camera mainCamera;
     public RectTransform uiImage;
-    public float distance = 100f;
+    public float distance = 5f;
     public LayerMask targetLayer;
 
-    public float rayRadius = 1f; // 当たり判定の大きさ
+    public float rayRadius = 0.5f; // 当たり判定の大きさ
 
     private bool isLoading = false;
 

@@ -15,17 +15,17 @@ EditorBuildSettings:
     path: Assets/st1.unity
     guid: 407ffa806fc884649bbdca893985784f
   - enabled: 1
+    path: Assets/gameover.unity
+    guid: 438fe08022451964aab0596e490ca5bf
+  - enabled: 1
     path: Assets/st2.unity
     guid: ba3ab157c70829e40974469545ccc1f5
-  - enabled: 1
+  - enabled: 0
     path: Assets/st3.unity
     guid: 6e8ab4efe5f8a3e42bdec946cdbef9fb
   - enabled: 1
     path: Assets/Scenes/kuria.unity
     guid: 08e91f3728602ca4f88c776328ac024e
-  - enabled: 1
-    path: Assets/gameover.unity
-    guid: 438fe08022451964aab0596e490ca5bf
   - enabled: 0
     path: Assets/gmaeover.unity
     guid: 5b5fa4b0936baac4bb7f08574b23355f
