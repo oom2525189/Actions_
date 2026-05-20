@@ -44,6 +44,8 @@ public class ui : MonoBehaviour
     System.Collections.IEnumerator LoadSceneDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("kuria");
     }
 }
