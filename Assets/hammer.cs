@@ -83,10 +83,8 @@ public class hammer : MonoBehaviour
 
             yield return null;
         }
-
         // 最終的に完全リセット
         Hammer_01.localRotation = Quaternion.Euler(baseAngle, 0f, 90f);
-
         hammerCollider.enabled = false;
         isSwinging = false;
     }

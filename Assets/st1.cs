@@ -5,7 +5,6 @@ public class st1 : MonoBehaviour
 {
     public void OnClick()
     {
-        
         Resume();
     }
     public void Resume()
