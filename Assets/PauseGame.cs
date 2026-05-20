@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PauseGame : MonoBehaviour
 {
     public GameObject menuUI;
-
+    public float timeLimit = 60f;
     private bool isPaused = false;
 
     void Start()
@@ -18,7 +18,13 @@ public class PauseGame : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        timeLimit -= Time.deltaTime;
+
+        if (timeLimit < 0)
+        {
+            timeLimit = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)&& timeLimit > 0)
         {
             if (isPaused)
                 Resume();

@@ -18,16 +18,16 @@ public class NewBehaviourScript : MonoBehaviour
     // 白フラッシュ
     public Image flashImage;
 
-    //public GameObject gameOverPanel;
+    public GameObject gameOverPanel;
 
     private bool isGameOver = false;
 
     void Start()
     {
-        //if (gameOverPanel != null)
-        //{
-        //    gameOverPanel.SetActive(false);
-        //}
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
 
         centerTimerText.gameObject.SetActive(false);
 
@@ -141,12 +141,14 @@ public class NewBehaviourScript : MonoBehaviour
 
         Debug.Log("ゲーム終了");
 
-        SceneManager.LoadScene("gameover");
-        //if (gameOverPanel != null)
-        //{
-        //    gameOverPanel.SetActive(true);
-        //}
-
         Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(true);
+        }
+
+       
     }
 }
