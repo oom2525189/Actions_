@@ -1,5 +1,7 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ui : MonoBehaviour
 {
@@ -7,75 +9,61 @@ public class ui : MonoBehaviour
 
     public float distance = 5f;
     public LayerMask targetLayer;
-
+    public LayerMask dummyLayer;
     public float rayRadius = 0.5f;
 
     private bool isLoading = false;
 
-    //private LineRenderer lineRenderer;
-
-    //void Start()
-    //{
-    //    // LineRenderer 作成
-    //    lineRenderer = gameObject.AddComponent<LineRenderer>();
-
-    //    lineRenderer.startWidth = 0.03f;
-    //    lineRenderer.endWidth = 0.03f;
-
-    //    lineRenderer.material = new Material(Shader.Find("Sprites/Default"));
-
-    //    lineRenderer.positionCount = 2;
-    //}
-
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0) && !isLoading)
         {
-            // ===== カメラ位置 =====
             Vector3 origin = mainCamera.transform.position;
-
-            // ===== カメラが向いている方向 =====
             Vector3 direction = mainCamera.transform.forward;
 
-            // Ray 作成
             Ray ray = new Ray(origin, direction);
 
-            // ===== Gameビューに表示 =====
-            //lineRenderer.enabled = true;
-
-            //lineRenderer.SetPosition(0, origin);
-            //lineRenderer.SetPosition(1, origin + direction * distance);
-
-            // SphereCast
-            if (Physics.SphereCast(ray, rayRadius, out RaycastHit hit, distance, targetLayer))
+            // ===== targetLayer =====
+            if (Physics.SphereCast(ray, rayRadius, out RaycastHit Hit, distance, targetLayer))
             {
-                Debug.Log("当たった: " + hit.collider.name);
+                Debug.Log("当たった: " + Hit.collider.name);
 
-                //lineRenderer.startColor = Color.green;
-                //lineRenderer.endColor = Color.green;
-
-                Destroy(hit.collider.gameObject);
+                Destroy(Hit.collider.gameObject);
 
                 StartCoroutine(LoadSceneDelay(1f));
 
                 isLoading = true;
             }
-            else
-            {
-                Debug.Log("何も当たってない");
 
-                //lineRenderer.startColor = Color.red;
-                //lineRenderer.endColor = Color.red;
+            // ===== dummyLayer =====
+            if (Physics.SphereCast(ray, rayRadius, out RaycastHit hit, distance, dummyLayer))
+            {
+                Debug.Log("ダミー");
+
+                Destroy(hit.collider.gameObject);
+
+                // ヒットストップ
+                StartCoroutine(HitStop(0.5f));
             }
         }
     }
 
-    System.Collections.IEnumerator LoadSceneDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        SceneManager.LoadScene("kuria");
-    }
-}
 
+    IEnumerator HitStop(float time)
+    {
+        Time.timeScale = 0f;
+
+        yield return new WaitForSecondsRealtime(time);
+
+        Time.timeScale = 1f;
+    }
+
+    System.Collections.IEnumerator LoadSceneDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("kuria");
+        }
+    }

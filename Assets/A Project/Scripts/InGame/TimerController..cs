@@ -36,9 +36,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
+
         if (isGameOver) return;
 
-        timeLimit -= Time.deltaTime;
+        // ★ ここを変更
+        timeLimit -= Time.unscaledDeltaTime;
 
         if (timeLimit < 0)
         {
