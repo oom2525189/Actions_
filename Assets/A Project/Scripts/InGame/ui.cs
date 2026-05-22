@@ -43,8 +43,8 @@ public class ui : MonoBehaviour
 
                 Destroy(hit.collider.gameObject);
 
-                // ヒットストップ
-                StartCoroutine(HitStop(0.5f));
+                //// ヒットストップ
+                //StartCoroutine(HitStop(0.5f));
             }
         }
     }

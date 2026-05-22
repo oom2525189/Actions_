@@ -36,11 +36,26 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
+        //時間停止中でも動く
+        //void Update()
+        //{
+        //    if (isGameOver) return;
 
+        //    // ★ ここを変更
+        //    timeLimit -= Time.unscaledDeltaTime;
+
+        //    if (timeLimit < 0)
+        //    {
+        //        timeLimit = 0;
+        //    }
+
+        //    int displayTime = Mathf.CeilToInt(timeLimit);
+
+        //    // 以下そのまま
+        //}
         if (isGameOver) return;
 
-        // ★ ここを変更
-        timeLimit -= Time.unscaledDeltaTime;
+        timeLimit -= Time.deltaTime;
 
         if (timeLimit < 0)
         {
@@ -133,6 +148,7 @@ public class NewBehaviourScript : MonoBehaviour
             GameOver();
         }
     }
+   
 
     void GameOver()
     {

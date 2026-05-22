@@ -16,7 +16,7 @@ public class PauseGame : MonoBehaviour
 
     void Update()
     {
-        if (isPaused) return;
+
         timeLimit -= Time.deltaTime;
 
         if (timeLimit < 0)
