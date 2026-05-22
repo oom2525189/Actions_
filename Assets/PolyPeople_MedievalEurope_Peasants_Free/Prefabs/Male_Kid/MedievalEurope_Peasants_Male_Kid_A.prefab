@@ -81,6 +81,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tokei
       objectReference: {fileID: 0}
+    - target: {fileID: 2886515943192358207, guid: 6770b10cae86b67478e8b1736ad7a958, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3908126979459744233, guid: 6770b10cae86b67478e8b1736ad7a958, type: 3}
       propertyPath: m_RootOrder
       value: 8
