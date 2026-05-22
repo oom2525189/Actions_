@@ -1480,7 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  mouseSensitivity: 50
+  mouseSensitivity: 40
   sound1: {fileID: 8300000, guid: 4d7a45c118d5def4587df89b255595a8, type: 3}
 --- !u!54 &1028101441
 Rigidbody:
@@ -2781,7 +2781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b532412cc5185134b814355cf1ce9dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 50
+  mouseSensitivity: 40
 --- !u!81 &1846188131
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3235,7 +3235,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1846188132}
-  uiImage: {fileID: 1050430398}
   distance: 5
   targetLayer:
     serializedVersion: 2
