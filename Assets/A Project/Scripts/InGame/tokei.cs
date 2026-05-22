@@ -3,6 +3,7 @@ using UnityEngine;
 public class tokei : MonoBehaviour
 {
 
+    public AudioClip breakSound;
     public GameObject hahennPrefab;
 
     void OnCollisionEnter(Collision collision)
@@ -17,7 +18,8 @@ public class tokei : MonoBehaviour
 
     private void OnDestroy()
     {
-       Instantiate(hahennPrefab, this.transform.position, Quaternion.identity); //弾を生成
+        AudioSource.PlayClipAtPoint(breakSound, transform.position);
+        Instantiate(hahennPrefab, this.transform.position, Quaternion.identity); //弾を生成
 
     }
 }
