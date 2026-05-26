@@ -21,6 +21,7 @@ public class titenn : MonoBehaviour
         if (transform.position == tokei.transform.position)
         {
             taiki = true;
+
             if (other.CompareTag("Player"))
                 switch (i)
                 {
@@ -45,12 +46,17 @@ public class titenn : MonoBehaviour
                         i = 5;
                         break;
                     case 5:
-                        transform.position = new Vector3(22.97f, -11.44f, -17.95f);
-                        i = 6;
+                        transform.position = new Vector3(22.97f, -9.359f, -16.028f);
+                        i = 7;
+
                         break;
                     case 6:
-                        transform.position = new Vector3(20.55f, -11.44f, -22.76f);
+                        transform.position = new Vector3(22.97f, -11.44f, -17.95f);
                         i = 7;
+                        break;
+                    case 7:
+                        transform.position = new Vector3(20.55f, -11.44f, -22.76f);
+                        i = 8;
                         break;
                 }
         }
