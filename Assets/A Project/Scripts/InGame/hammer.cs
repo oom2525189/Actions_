@@ -33,6 +33,7 @@ public class hammer : MonoBehaviour
         {
             StartCoroutine(Swing());
             audioSource.PlayOneShot(sound1);
+            TutorialManager.Instance.CompleteCondition(TutorialConditionType.Attack);
         }
     }
 

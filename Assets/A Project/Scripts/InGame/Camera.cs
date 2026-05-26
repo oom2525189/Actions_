@@ -14,5 +14,6 @@ public class Camera : MonoBehaviour
 
         // ã‰º‚¾‚¯‰ñ“]iZ‚ÍŠ®‘S‚É0j
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        TutorialManager.Instance.CompleteCondition(TutorialConditionType.Jumpperspective);
     }
 }

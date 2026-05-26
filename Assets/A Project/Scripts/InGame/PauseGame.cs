@@ -54,6 +54,7 @@ public class PauseGame : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
     }
     public void ReturnToTitle()
     {

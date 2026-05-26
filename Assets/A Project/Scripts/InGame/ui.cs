@@ -42,7 +42,7 @@ public class ui : MonoBehaviour
                 Debug.Log("ダミー");
 
                 Destroy(hit.collider.gameObject);
-
+                TutorialManager.Instance.CompleteCondition(TutorialConditionType.Destroy);
                 //// ヒットストップ
                 //StartCoroutine(HitStop(0.5f));
             }

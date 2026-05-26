@@ -46,12 +46,14 @@ public class player : MonoBehaviour
         if (nowMoving && !isMoving)
         {
             audioSource.Play();
+            TutorialManager.Instance.CompleteCondition(TutorialConditionType.Move);
         }
 
         // 🎯 止まったとき
         if (!nowMoving && isMoving)
         {
             audioSource.Stop();
+          
         }
 
         isMoving = nowMoving;
