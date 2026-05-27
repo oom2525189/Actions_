@@ -3669,7 +3669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6de2b78974acce4395ac0feaaf3ded6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmAudioSource: {fileID: 0}
+  bgmAudioSource: {fileID: 1333377326}
 --- !u!4 &1333377328
 Transform:
   m_ObjectHideFlags: 0
