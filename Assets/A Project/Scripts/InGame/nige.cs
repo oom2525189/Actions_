@@ -52,14 +52,22 @@ public class nige : MonoBehaviour
 
         if (idou)
         {
-            
 
-            if (bCount == 5 || bCount == 6)
+
+            if (bCount == 6)
+            {
+                run = false;
                 jump = true;
-            else if(bCount == 7)
+                
+            }
+            else if (bCount == 8)
+            {
+                run = false;
                 koke = true;
+                
+            }
             else
-            run = true;
+                run = true;
 
             //スタート位置、ターゲットの座標、速度
             transform.position = Vector3.MoveTowards(
