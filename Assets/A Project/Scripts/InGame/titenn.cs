@@ -8,7 +8,6 @@ public class titenn : MonoBehaviour
 
     [SerializeField] GameObject tokei;
     public int i = 0;
-    public bool taiki = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,13 +15,12 @@ public class titenn : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
         if (transform.position == tokei.transform.position)
         {
-            taiki = true;
+          
 
-            if (other.CompareTag("Player"))
                 switch (i)
                 {
                     case 0:
@@ -47,8 +45,7 @@ public class titenn : MonoBehaviour
                         break;
                     case 5:
                         transform.position = new Vector3(22.97f, -9.359f, -16.028f);
-                        i = 7;
-
+                        i = 6;
                         break;
                     case 6:
                         transform.position = new Vector3(22.97f, -11.44f, -17.95f);
@@ -56,12 +53,12 @@ public class titenn : MonoBehaviour
                         break;
                     case 7:
                         transform.position = new Vector3(20.55f, -11.44f, -22.76f);
-                        i = 8;
+                        //i = 8;
                         break;
                 }
         }
-        else
-            taiki = false;
+        
+            
     }
 
 }
