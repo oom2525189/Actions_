@@ -14,12 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/A Project/Scenes/st1.unity
     guid: 407ffa806fc884649bbdca893985784f
-  - enabled: 0
+  - enabled: 1
     path: Assets/A Project/Scenes/st2.unity
-    guid: ba3ab157c70829e40974469545ccc1f5
+    guid: 6e8ab4efe5f8a3e42bdec946cdbef9fb
   - enabled: 1
     path: Assets/A Project/Scenes/st3.unity
-    guid: 6e8ab4efe5f8a3e42bdec946cdbef9fb
+    guid: ba3ab157c70829e40974469545ccc1f5
   - enabled: 1
     path: Assets/A Project/Scenes/kuria.unity
     guid: 08e91f3728602ca4f88c776328ac024e
