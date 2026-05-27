@@ -39,7 +39,7 @@ public class PauseGame : MonoBehaviour
         menuUI.SetActive(true);
 
         Time.timeScale = 0f; // 🎯 ゲーム停止
-
+        AudioListener.pause = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -51,7 +51,7 @@ public class PauseGame : MonoBehaviour
         menuUI.SetActive(false);
 
         Time.timeScale = 1f;
-
+        AudioListener.pause = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
@@ -59,7 +59,7 @@ public class PauseGame : MonoBehaviour
     public void ReturnToTitle()
     {
         Time.timeScale = 1f; // 忘れると次のシーンが止まる
-
+        AudioListener.pause = false;
         SceneManager.LoadScene("Title"); // 🎯 タイトルシーン名
     }
 }

@@ -155,7 +155,7 @@ public class NewBehaviourScript : MonoBehaviour
         isGameOver = true;
 
         Debug.Log("ゲーム終了");
-
+        AudioListener.pause = true;
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
