@@ -7,7 +7,8 @@ public class tokei : MonoBehaviour
     public GameObject hahennPrefab;
     private void OnDestroy()
     {
-        AudioSource.PlayClipAtPoint(breakSound, transform.position);
+        float seVolume = PlayerPrefs.GetFloat("SE_VOLUME", 0.5f);
+        AudioSource.PlayClipAtPoint(breakSound, transform.position, seVolume);
         Instantiate(hahennPrefab, this.transform.position, Quaternion.identity); //弾を生成
 
     }

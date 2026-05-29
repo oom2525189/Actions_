@@ -21,6 +21,7 @@ public class player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("SE_VOLUME", 0.5f);
         audioSource.clip = sound1;
         audioSource.loop = true; // 🎯 ループ再生
     }

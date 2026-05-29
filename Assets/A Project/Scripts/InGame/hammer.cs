@@ -25,6 +25,7 @@ public class hammer : MonoBehaviour
 
         hammerCollider.enabled = false; // 最初はOFF
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = PlayerPrefs.GetFloat("SE_VOLUME", 0.5f);
     }
 
     void Update()
