@@ -29,8 +29,7 @@ public class MenuManager : MonoBehaviour
 
     public void ShowOperation()
     {
-        mainMenuPanel.SetActive(false);
-        operationPanel.SetActive(true);
+        SceneManager.LoadScene("tutorial");
     }
 
     public void ShowConfig()

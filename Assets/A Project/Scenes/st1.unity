@@ -3166,6 +3166,7 @@ GameObject:
   - component: {fileID: 2018409990}
   - component: {fileID: 2018409992}
   - component: {fileID: 2018409991}
+  - component: {fileID: 2018409993}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3226,3 +3227,17 @@ MonoBehaviour:
   centerTimerText: {fileID: 1738219351}
   flashImage: {fileID: 1823404703}
   gameOverPanel: {fileID: 1998714318}
+--- !u!114 &2018409993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018409988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e1a7c7adf565b4a8097ee344ca8e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steps: []
+  tutorialText: {fileID: 0}
