@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
@@ -17,7 +18,9 @@ public class titenn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position == tokei.transform.position)
+        if (/*transform.position == tokei.transform.position*/
+            Vector3.Distance(transform.position, tokei.transform.position) < 0.01f &&
+            Vector3.Distance(transform.position, tokei.transform.position) < 0.01f)
         {
 
 
@@ -48,14 +51,17 @@ public class titenn : MonoBehaviour
                     i = 6;
                     break;
                 case 6:
-                    transform.position = new Vector3(22.97f, -11.44f, -17.95f);
+                    transform.position = new Vector3(22.97f, -11.3f, -17.95f);
                     i = 7;
                     break;
                 case 7:
-                    transform.position = new Vector3(20.55f, -11.44f, -22.76f);
+                    transform.position = new Vector3(20.55f, -11.3f, -22.76f);
                     i = 8;
                     break;
-               
+                case 8:
+                    transform.position = new Vector3(20.55f, -11.5f, -30.0f);
+                    i = 9;
+                    break;
             }
         }
 
