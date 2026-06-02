@@ -23,7 +23,7 @@ public class PauseGame : MonoBehaviour
         {
             timeLimit = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Escape)&& timeLimit > 0)
+        if (Input.GetKeyDown(KeyCode.Escape)/*&& timeLimit > 0*/)
         {
             TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
             if (isPaused)
