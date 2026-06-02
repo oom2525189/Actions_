@@ -26,11 +26,11 @@ public class nige : MonoBehaviour
     public int bCount;
     void Start()
     {
-       
+
     }
     // Update is called once per frame
     [SerializeField] GameObject target;
-
+    //[SerializeField] GameObject pl;
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.name == "Player")
@@ -54,26 +54,29 @@ public class nige : MonoBehaviour
         {
 
 
-            if (bCount == 6)
+            if (bCount == 6 || bCount == 7)
             {
                 run = false;
                 jump = true;
-                
+
             }
-            else if (bCount == 8)
+            else if (bCount == 9)
             {
                 run = false;
                 koke = true;
-                
+
             }
             else
+            {
                 run = true;
-
+                jump = false;
+                koke = false;
+            }
             //スタート位置、ターゲットの座標、速度
             transform.position = Vector3.MoveTowards(
           transform.position,
           target.transform.position,
-          speed * Time.deltaTime);
+          /*speed * Time.deltaTime*/0);
             Vector3 direction = target.transform.position - transform.position;
             if (direction != Vector3.zero) // 距離が0のときの警告を防ぐ
             {
@@ -85,9 +88,12 @@ public class nige : MonoBehaviour
             run = false;
             jump = false;
             koke = false;
+            //Vector3 directio = pl.transform.position - transform.position;
+            //if (directio != Vector3.zero)
+            //    transform.rotation = Quaternion.LookRotation(directio);
         }
-        tokeianimation.SetBool("run", run);
-        tokeianimation.SetBool("jump", jump);
+            tokeianimation.SetBool("run", run);
+        tokeianimation.SetBool("jamp", jump);
         tokeianimation.SetBool("kokeru", koke);
 
     }
