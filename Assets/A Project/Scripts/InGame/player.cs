@@ -37,11 +37,22 @@ public class player : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        Vector3 move = transform.forward * v + transform.right * h;
+        // 1. まずは入力の方向ベクトルを作る
+        Vector3 inputDir = new Vector3(h, 0f, v);
 
-        rb.velocity = new Vector3(move.x * moveSpeed, rb.velocity.y, move.z * moveSpeed);
+        // 2. 入力が一定以上の強さ（斜めなど）なら、長さを1に正規化する
+        if (inputDir.magnitude > 1f)
+        {
+            inputDir.Normalize();
+        }
 
-        bool nowMoving = (h != 0 || v != 0);
+        // 3. 正規化した入力方向を、プレイヤーの向き（ローカル空間）に変換
+        Vector3 move = transform.forward * inputDir.z + transform.right * inputDir.x;
+
+        // 4. 速度を適用
+        rb.velocity = new Vector3(move.x * moveSpeed, rb.velocity.y, move.z * moveSpeed); //
+
+        bool nowMoving = (h != 0 || v != 0); //
 
         // 🎯 動き始めたとき
         if (nowMoving && !isMoving)

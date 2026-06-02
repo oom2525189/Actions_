@@ -25,6 +25,7 @@ public class PauseGame : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape)&& timeLimit > 0)
         {
+            TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
             if (isPaused)
                 Resume();
             else
@@ -54,7 +55,7 @@ public class PauseGame : MonoBehaviour
         AudioListener.pause = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
+        TutorialManager.Instance.CompleteCondition(TutorialConditionType.restart);
     }
     public void ReturnToTitle()
     {

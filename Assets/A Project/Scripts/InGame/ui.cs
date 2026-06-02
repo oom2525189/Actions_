@@ -10,41 +10,62 @@ public class ui : MonoBehaviour
     public float distance = 5f;
     public LayerMask targetLayer;
     public LayerMask dummyLayer;
+    public LayerMask wallLayer;
     public float rayRadius = 0.5f;
 
     private bool isLoading = false;
 
     void Update()
     {
-
         if (Input.GetMouseButtonDown(0) && !isLoading)
         {
-            Vector3 origin = mainCamera.transform.position;
-            Vector3 direction = mainCamera.transform.forward;
+            Ray ray = new Ray(
+                mainCamera.transform.position,
+                mainCamera.transform.forward
+            );
 
-            Ray ray = new Ray(origin, direction);
+            LayerMask hitLayers =
+                targetLayer |
+                dummyLayer |
+                wallLayer;
 
-            // ===== targetLayer =====
-            if (Physics.SphereCast(ray, rayRadius, out RaycastHit Hit, distance, targetLayer))
+            if (Physics.SphereCast(
+                ray,
+                rayRadius,
+                out RaycastHit hit,
+                distance,
+                hitLayers))
             {
-                Debug.Log("当たった: " + Hit.collider.name);
+                int hitLayer = 1 << hit.collider.gameObject.layer;
 
-                Destroy(Hit.collider.gameObject);
+                // 壁ならここで終了
+                if ((hitLayer & wallLayer) != 0)
+                {
+                    Debug.Log("壁に当たった");
+                    return;
+                }
 
-                StartCoroutine(LoadSceneDelay(1f));
+                // Target
+                if ((hitLayer & targetLayer) != 0)
+                {
+                    Debug.Log("当たった: " + hit.collider.name);
 
-                isLoading = true;
-            }
+                    Destroy(hit.collider.gameObject);
 
-            // ===== dummyLayer =====
-            if (Physics.SphereCast(ray, rayRadius, out RaycastHit hit, distance, dummyLayer))
-            {
-                Debug.Log("ダミー");
+                    isLoading = true;
+                    StartCoroutine(LoadSceneDelay(1f));
+                }
+                // Dummy
+                else if ((hitLayer & dummyLayer) != 0)
+                {
+                    Debug.Log("ダミー");
 
-                Destroy(hit.collider.gameObject);
-                TutorialManager.Instance.CompleteCondition(TutorialConditionType.Destroy);
-                //// ヒットストップ
-                //StartCoroutine(HitStop(0.5f));
+                    Destroy(hit.collider.gameObject);
+
+                    TutorialManager.Instance.CompleteCondition(
+                        TutorialConditionType.Destroy
+                    );
+                }
             }
         }
     }

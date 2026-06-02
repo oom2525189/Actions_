@@ -18,6 +18,7 @@ public enum TutorialConditionType
     Jumpperspective,
     Attack,
     Pause,
+    restart,
     Destroy
 
 }
