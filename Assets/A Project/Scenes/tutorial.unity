@@ -5313,7 +5313,7 @@ MonoBehaviour:
   - message: "ESC\u3067\u30DD\u30FC\u30BA"
     conditionType: 4
     nextDelay: 0
-  - message: "\u518D\u958B\u30DD\u30BF\u3093\u3067\u30B2\u30FC\u30E0\u306B\u623B\u308C\u308B"
+  - message: "\u518D\u958B\u30DD\u30BF\u3093\u3067\u30B2\u30FC\u30E0\u518D\u958B"
     conditionType: 5
     nextDelay: 0
   - message: "\u6A19\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
@@ -5340,6 +5340,9 @@ MonoBehaviour:
   dummyLayer:
     serializedVersion: 2
     m_Bits: 64
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   rayRadius: 0.05
 --- !u!114 &2087062158
 MonoBehaviour:
