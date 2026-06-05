@@ -14,12 +14,6 @@ public class SoundManager : MonoBehaviour
     private const string BGM_VOLUME_KEY = "BGM_VOLUME";
     private const string SE_VOLUME_KEY = "SE_VOLUME";
 
-    void Start()
-    {
-        Debug.Log("BGM AudioSource = " + bgmAudioSource.GetInstanceID());
-        Debug.Log("SE AudioSource = " + seAudioSource.GetInstanceID());
-    }
-
     void Awake()
     {
         if (instance == null)
