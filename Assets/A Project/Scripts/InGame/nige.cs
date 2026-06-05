@@ -43,8 +43,16 @@ public class nige : MonoBehaviour
     {
         if (other.gameObject.name == "Player")
         {
-            idou = false;
+
+            Invoke("ExecuteMove", 0.5f);
         }
+    }
+
+
+
+    void ExecuteMove()
+    {
+        idou = false;
     }
     void Update()
     {
@@ -54,13 +62,13 @@ public class nige : MonoBehaviour
         {
 
 
-            if (bCount == 6 || bCount == 7)
+            if (/*bCount == 7 ||*/ bCount == 6)
             {
                 run = false;
                 jump = true;
 
             }
-            else if (bCount == 8)
+            else if (bCount == 9)
             {
                 run = false;
                 koke = true;
@@ -92,7 +100,7 @@ public class nige : MonoBehaviour
             //if (directio != Vector3.zero)
             //    transform.rotation = Quaternion.LookRotation(directio);
         }
-            tokeianimation.SetBool("run", run);
+        tokeianimation.SetBool("run", run);
         tokeianimation.SetBool("jamp", jump);
         tokeianimation.SetBool("kokeru", koke);
 

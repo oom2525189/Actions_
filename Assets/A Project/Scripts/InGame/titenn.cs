@@ -55,12 +55,12 @@ public class titenn : MonoBehaviour
                     i = 7;
                     break;
                 case 7:
-                    transform.position = new Vector3(20.55f, -11.3f, -22.76f);
+                    transform.position = new Vector3(20.55f, -11.6f, -22.76f);
                     i = 8;
                     break;
                 case 8:
-                    transform.position = new Vector3(20.601f, -11.8f, -24.22f);
-                    i = 8;
+                    transform.position = new Vector3(20.601f, -11.9f, -24.22f);
+                    i = 9;
                     break;
             }
         }
