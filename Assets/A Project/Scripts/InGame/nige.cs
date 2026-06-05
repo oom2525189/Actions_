@@ -60,7 +60,7 @@ public class nige : MonoBehaviour
                 jump = true;
 
             }
-            else if (bCount == 9)
+            else if (bCount == 8)
             {
                 run = false;
                 koke = true;
@@ -76,7 +76,7 @@ public class nige : MonoBehaviour
             transform.position = Vector3.MoveTowards(
           transform.position,
           target.transform.position,
-          /*speed * Time.deltaTime*/0);
+          speed * Time.deltaTime);
             Vector3 direction = target.transform.position - transform.position;
             if (direction != Vector3.zero) // 距離が0のときの警告を防ぐ
             {
