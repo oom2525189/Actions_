@@ -57,49 +57,51 @@ public class nige : MonoBehaviour
     void Update()
     {
         bCount = playerScript.i;
+        if (bCount >= 6 && bCount <= 9)
+            idou = true;
 
-        if (idou)
-        {
-
-
-            if (/*bCount == 7 ||*/ bCount == 6)
+            if (idou)
             {
-                run = false;
-                jump = true;
 
-            }
-            else if (bCount == 9)
-            {
-                run = false;
-                koke = true;
 
+                if (bCount == 7 || bCount == 6)
+                {
+                    run = false;
+                    jump = true;
+
+                }
+                else if (bCount == 9)
+                {
+                    run = false;
+                    koke = true;
+
+                }
+                else
+                {
+                    run = true;
+                    jump = false;
+                    koke = false;
+                }
+                //スタート位置、ターゲットの座標、速度
+                transform.position = Vector3.MoveTowards(
+              transform.position,
+              target.transform.position,
+              speed * Time.deltaTime);
+                Vector3 direction = target.transform.position - transform.position;
+                if (direction != Vector3.zero) // 距離が0のときの警告を防ぐ
+                {
+                    transform.rotation = Quaternion.LookRotation(direction);
+                }
             }
             else
             {
-                run = true;
+                run = false;
                 jump = false;
                 koke = false;
+                //Vector3 directio = pl.transform.position - transform.position;
+                //if (directio != Vector3.zero)
+                //    transform.rotation = Quaternion.LookRotation(directio);
             }
-            //スタート位置、ターゲットの座標、速度
-            transform.position = Vector3.MoveTowards(
-          transform.position,
-          target.transform.position,
-          speed * Time.deltaTime);
-            Vector3 direction = target.transform.position - transform.position;
-            if (direction != Vector3.zero) // 距離が0のときの警告を防ぐ
-            {
-                transform.rotation = Quaternion.LookRotation(direction);
-            }
-        }
-        else
-        {
-            run = false;
-            jump = false;
-            koke = false;
-            //Vector3 directio = pl.transform.position - transform.position;
-            //if (directio != Vector3.zero)
-            //    transform.rotation = Quaternion.LookRotation(directio);
-        }
         tokeianimation.SetBool("run", run);
         tokeianimation.SetBool("jamp", jump);
         tokeianimation.SetBool("kokeru", koke);
