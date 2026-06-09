@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 293531410}
-  distance: 5
+  distance: 3
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -9112,11 +9112,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.3031236, y: 0.11855046, z: 0.120304644}
   m_Center: {x: 0, y: -0.000000033527623, z: 0.43827686}
---- !u!64 &1914615309 stripped
-MeshCollider:
-  m_CorrespondingSourceObject: {fileID: 6400002, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
-  m_PrefabInstance: {fileID: 1620024055}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1927318510
 GameObject:
   m_ObjectHideFlags: 0
@@ -10381,7 +10376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hammer_01: {fileID: 766452916}
-  hammerCollider: {fileID: 1914615309}
   swingSpeed: 10
   sound1: {fileID: 8300000, guid: 03f98c9fbb9acde45b5d4ee746fcca1a, type: 3}
 --- !u!54 &2109121148

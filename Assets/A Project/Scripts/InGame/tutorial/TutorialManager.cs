@@ -1,6 +1,7 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -58,8 +59,16 @@ public class TutorialManager : MonoBehaviour
         else
         {
             tutorialText.text = "チュートリアル完了！";
+            StartCoroutine(LoadSceneDelay(2f));
         }
-
         isProcessing = false;
     }
+    System.Collections.IEnumerator LoadSceneDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        SceneManager.LoadScene("Title");
+    }
 }
+
