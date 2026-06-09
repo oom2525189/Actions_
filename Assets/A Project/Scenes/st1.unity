@@ -1477,6 +1477,7 @@ GameObject:
   - component: {fileID: 1028101440}
   - component: {fileID: 1028101437}
   - component: {fileID: 1028101438}
+  - component: {fileID: 1028101447}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1752,6 +1753,18 @@ MonoBehaviour:
   Hammer_01: {fileID: 1624670831}
   swingSpeed: 10
   sound1: {fileID: 8300000, guid: 03f98c9fbb9acde45b5d4ee746fcca1a, type: 3}
+--- !u!114 &1028101447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028101435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1f188c39ddd914b9ead9a80768b3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1050430397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,16 +2149,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1028101445}
-        m_TargetAssemblyTypeName: st1, Assembly-CSharp
-        m_MethodName: ReturnToTitle
-        m_Mode: 1
+      - m_Target: {fileID: 1028101447}
+        m_TargetAssemblyTypeName: SceneTransitionManager, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1286353120
@@ -2272,14 +2285,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1028101445}
         m_TargetAssemblyTypeName: st1, Assembly-CSharp
-        m_MethodName: Resume
+        m_MethodName: Resume1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: st1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1374737118
