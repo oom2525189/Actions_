@@ -16,16 +16,20 @@ public class PauseGame : MonoBehaviour
 
     void Update()
     {
-
-        timeLimit -= Time.deltaTime;
-
-        if (timeLimit < 0)
+        if (!isPaused)
         {
-            timeLimit = 0;
+            timeLimit -= Time.deltaTime;
+
+            if (timeLimit < 0)
+            {
+                timeLimit = 0;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.Escape)/*&& timeLimit > 0*/)
+
+        if (Input.GetKeyDown(KeyCode.Escape) && timeLimit > 0)
         {
             TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
+
             if (isPaused)
                 Resume();
             else

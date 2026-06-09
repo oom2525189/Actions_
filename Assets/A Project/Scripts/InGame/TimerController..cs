@@ -153,17 +153,14 @@ public class NewBehaviourScript : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
-
         Debug.Log("ゲーム終了");
-        AudioListener.pause = true;
         Time.timeScale = 0f;
+        AudioListener.pause = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
         }
-
-       
     }
 }
