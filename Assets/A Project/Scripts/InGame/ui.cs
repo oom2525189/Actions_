@@ -12,79 +12,93 @@ public class ui : MonoBehaviour
     public LayerMask dummyLayer;
     public LayerMask wallLayer;
     public float rayRadius = 0.5f;
-
+    public GameObject gamekuriaPanel;
     private bool isLoading = false;
 
-    void Update()
+    void Start()
     {
-        if (Input.GetMouseButtonDown(0) && !isLoading)
+        if (gamekuriaPanel != null)
         {
-            Ray ray = new Ray(
-                mainCamera.transform.position,
-                mainCamera.transform.forward
-            );
-
-            LayerMask hitLayers =
-                targetLayer |
-                dummyLayer |
-                wallLayer;
-
-            if (Physics.SphereCast(
-                ray,
-                rayRadius,
-                out RaycastHit hit,
-                distance,
-                hitLayers))
+            gamekuriaPanel.SetActive(false);
+        }
+    }
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0) && !isLoading)
             {
-                int hitLayer = 1 << hit.collider.gameObject.layer;
+                Ray ray = new Ray(
+                    mainCamera.transform.position,
+                    mainCamera.transform.forward
+                );
 
-                // 壁ならここで終了
-                if ((hitLayer & wallLayer) != 0)
+                LayerMask hitLayers =
+                    targetLayer |
+                    dummyLayer |
+                    wallLayer;
+
+                if (Physics.SphereCast(
+                    ray,
+                    rayRadius,
+                    out RaycastHit hit,
+                    distance,
+                    hitLayers))
                 {
-                    Debug.Log("壁に当たった");
-                    return;
-                }
+                    int hitLayer = 1 << hit.collider.gameObject.layer;
 
-                // Target
-                if ((hitLayer & targetLayer) != 0)
-                {
-                    Debug.Log("当たった: " + hit.collider.name);
+                    // 壁ならここで終了
+                    if ((hitLayer & wallLayer) != 0)
+                    {
+                        Debug.Log("壁に当たった");
+                        return;
+                    }
 
-                    Destroy(hit.collider.gameObject);
+                    // Target
+                    if ((hitLayer & targetLayer) != 0)
+                    {
+                        Debug.Log("当たった: " + hit.collider.name);
 
-                    isLoading = true;
-                    StartCoroutine(LoadSceneDelay(1f));
-                }
-                // Dummy
-                else if ((hitLayer & dummyLayer) != 0)
-                {
-                    Debug.Log("ダミー");
+                        Destroy(hit.collider.gameObject);
 
-                    Destroy(hit.collider.gameObject);
+                        isLoading = true;
+                        StartCoroutine(LoadSceneDelay(1f));
+                    }
+                    // Dummy
+                    else if ((hitLayer & dummyLayer) != 0)
+                    {
+                        Debug.Log("ダミー");
 
-                    TutorialManager.Instance.CompleteCondition(
-                        TutorialConditionType.Destroy
-                    );
+                        Destroy(hit.collider.gameObject);
+
+                        TutorialManager.Instance.CompleteCondition(
+                            TutorialConditionType.Destroy
+                        );
+                    }
                 }
             }
         }
-    }
 
 
-    IEnumerator HitStop(float time)
-    {
-        Time.timeScale = 0f;
-
-        yield return new WaitForSecondsRealtime(time);
-
-        Time.timeScale = 1f;
-    }
-
-    System.Collections.IEnumerator LoadSceneDelay(float delay)
+        IEnumerator HitStop(float time)
         {
-            yield return new WaitForSeconds(delay);
+            Time.timeScale = 0f;
+
+            yield return new WaitForSecondsRealtime(time);
+
+            Time.timeScale = 1f;
+        }
+
+        System.Collections.IEnumerator LoadSceneDelay(float delay)
+        {
+        
+        yield return new WaitForSeconds(delay);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadScene("kuria");
+        //SceneManager.LoadScene("kuria");
+        if (gamekuriaPanel != null)
+        {
+            gamekuriaPanel.SetActive(true);
+        }
+        Time.timeScale = 0f;
         }
     }
+
