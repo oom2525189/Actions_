@@ -4448,6 +4448,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8144784494935811278, guid: 0a77eef02d8d3634f83144e2c9415849, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1911974963}
+    - targetCorrespondingSourceObject: {fileID: 8144784494935811278, guid: 0a77eef02d8d3634f83144e2c9415849, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1911974964}
   m_SourcePrefab: {fileID: 100100000, guid: 0a77eef02d8d3634f83144e2c9415849, type: 3}
 --- !u!1 &1911974951 stripped
 GameObject:
@@ -4612,6 +4615,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 9eb5651f6ae5c4149a00cf3555413896, type: 3}
   hahennPrefab: {fileID: 1201488668533155241, guid: 9c4747f07eb95824281074500e3cc8c0, type: 3}
+--- !u!114 &1911974964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911974951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b5279f0cb98e3a46ac3c6c359c22320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2018409988
 GameObject:
   m_ObjectHideFlags: 0
