@@ -12,8 +12,10 @@ public class hasiri : MonoBehaviour
     }
 
     // Update is called once per frame
+   
+        public float speed =30.0f;
     void Update()
     {
-        transform.Translate(0, 0, 0);
+        transform.Rotate(0, speed * Time.deltaTime, 0);
     }
 }
