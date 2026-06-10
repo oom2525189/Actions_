@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,9 +7,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource bgmAudioSource;
     [SerializeField] AudioSource seAudioSource;
 
-    //保存用のキーワード（キー）を決めておく
-    private const string BGM_VOLUME_KEY = "BGM_VOLUME";
-    private const string SE_VOLUME_KEY = "SE_VOLUME";
+    public const string BGM_VOLUME_KEY = "BGM_VOLUME";
+    public const string SE_VOLUME_KEY = "SE_VOLUME";
+    public const string CLOCK_VOLUME_KEY = "CLOCK_VOLUME";
 
     void Awake()
     {
@@ -21,7 +18,6 @@ public class SoundManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            //ゲーム起動時に保存された音量を読み込む
             LoadVolume();
         }
         else
@@ -34,9 +30,8 @@ public class SoundManager : MonoBehaviour
     {
         bgmAudioSource.volume = volume;
 
-        //音量が変更されたら、その値をパソコンに保存する
         PlayerPrefs.SetFloat(BGM_VOLUME_KEY, volume);
-        PlayerPrefs.Save(); // 確実に保存を実行
+        PlayerPrefs.Save();
     }
 
     public void SetSEVolume(float volume)
@@ -47,15 +42,21 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void SetClockVolume(float volume)
+    {
+        PlayerPrefs.SetFloat(CLOCK_VOLUME_KEY, volume);
+        PlayerPrefs.Save();
+    }
+
     private void LoadVolume()
     {
-        //保存された値があればそれを読み込む。なければ「0.5（真ん中）」を初期値にする
-        float savedVolume = PlayerPrefs.GetFloat(BGM_VOLUME_KEY, 0.5f);
+        float savedBGMVolume =
+            PlayerPrefs.GetFloat(BGM_VOLUME_KEY, 0.5f);
+
         float savedSEVolume =
             PlayerPrefs.GetFloat(SE_VOLUME_KEY, 0.5f);
 
-        //音量を適用
-        bgmAudioSource.volume = savedVolume;
+        bgmAudioSource.volume = savedBGMVolume;
         seAudioSource.volume = savedSEVolume;
     }
 }
