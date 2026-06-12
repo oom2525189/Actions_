@@ -5,15 +5,21 @@ public class Camera : MonoBehaviour
     public float mouseSensitivity = 300f;
     private float xRotation = 0f;
 
+
+    void Start()
+    {
+        mouseSensitivity = PlayerPrefs.GetFloat("MOUSE_SENSITIVITY", 300f);
+    }
     void Update()
     {
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // 上下だけ回転（Zは完全に0）float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-        // 上下だけ回転（Zは完全に0）
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
         TutorialManager.Instance.CompleteCondition(TutorialConditionType.Jumpperspective);
     }
 }

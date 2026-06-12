@@ -17,6 +17,7 @@ public class player : MonoBehaviour
 
     void Start()
     {
+        mouseSensitivity = PlayerPrefs.GetFloat("MOUSE_SENSITIVITY", 300f);
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
 
