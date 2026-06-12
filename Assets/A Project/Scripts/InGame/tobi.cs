@@ -9,7 +9,7 @@ public class tobi : MonoBehaviour
     public int x = 0;
     public int y = 0;
     public int z = 0;
-    public int i = 0;
+   
 
     void Start()
     {
@@ -24,8 +24,8 @@ public class tobi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(i>=1500)
-            Destroy(gameObject);
-        i++;
+        
+            Destroy(gameObject,5.0f);
+        
     }
 }

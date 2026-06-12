@@ -149,7 +149,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &930631988858406971
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +298,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &1201488668533155241
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,7 +631,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &2460305306331692532
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,7 +780,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &2776879901878337081
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +902,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &1303954814522798032
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1083,7 +1078,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3034610984492429574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1233,7 +1227,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3697334742220474907
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1376,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3794514569633818851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1525,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3877288779268460690
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1674,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3907666617323961531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,7 +1823,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3948156438594485659
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,7 +1972,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &3969661427102297100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,7 +2121,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4261220171664616995
 GameObject:
   m_ObjectHideFlags: 0
@@ -2283,7 +2270,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4465484758466133872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2419,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4509076328467481151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2583,7 +2568,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4555909528361706856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2733,7 +2717,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4786197931495104238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,7 +2866,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4868283573972480039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3033,7 +3015,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &4998668129308673605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3183,7 +3164,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &5084028153786482101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3286,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &5983467665895662505
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3456,7 +3435,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &916541566007153415
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3633,7 +3611,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &5797290604092722240
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,7 +3733,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &1897304083061745608
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3906,7 +3882,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &8913420708573357798
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4056,7 +4031,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &986286111148141098
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4233,7 +4207,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &6265323207477866701
 GameObject:
   m_ObjectHideFlags: 0
@@ -4356,7 +4329,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &7352667022266451699
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4506,7 +4478,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &682857791902062014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4683,7 +4654,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &6476298465483185202
 GameObject:
   m_ObjectHideFlags: 0
@@ -4833,7 +4803,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &6856142628895340215
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,7 +4925,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &8389818748563277493
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5133,7 +5101,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &7047115700623977489
 GameObject:
   m_ObjectHideFlags: 0
@@ -5283,7 +5250,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &7053023485555025186
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,7 +5372,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &8792412937162607960
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5583,7 +5548,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &7859221576531734129
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,7 +5803,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &7281379602416191008
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6016,7 +5979,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &8546761607249176178
 GameObject:
   m_ObjectHideFlags: 0
@@ -6139,7 +6101,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &6559372197398105843
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6316,7 +6277,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &8739339294723675471
 GameObject:
   m_ObjectHideFlags: 0
@@ -6466,7 +6426,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &8741345294606581792
 GameObject:
   m_ObjectHideFlags: 0
@@ -6616,7 +6575,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &8966211596422855802
 GameObject:
   m_ObjectHideFlags: 0
@@ -6739,7 +6697,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &6800974477101586283
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6916,7 +6873,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &9161378728418872086
 GameObject:
   m_ObjectHideFlags: 0
@@ -7066,7 +7022,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1 &9209956790140873553
 GameObject:
   m_ObjectHideFlags: 0
@@ -7216,7 +7171,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!1001 &1473523717767282204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7228,6 +7182,10 @@ PrefabInstance:
     - target: {fileID: 1252787227748787106, guid: 5ba5157591ed13d44959cc61aba92c5a, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252787227748787106, guid: 5ba5157591ed13d44959cc61aba92c5a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1252787227754975522, guid: 5ba5157591ed13d44959cc61aba92c5a, type: 3}
       propertyPath: m_RootOrder
@@ -7325,7 +7283,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &323902385772199292
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7364,6 +7321,10 @@ PrefabInstance:
     - target: {fileID: 1252787227748787106, guid: 5ba5157591ed13d44959cc61aba92c5a, type: 3}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252787227748787106, guid: 5ba5157591ed13d44959cc61aba92c5a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1252787227754975522, guid: 5ba5157591ed13d44959cc61aba92c5a, type: 3}
       propertyPath: m_RootOrder
@@ -7456,7 +7417,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &5807317104547098961
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7561,6 +7521,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6278412420818197902, guid: 2548aebc15331404dbe3520e53049e29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7597,7 +7561,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &6035749971121997200
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7633,6 +7596,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6378495155188633273}
     m_Modifications:
+    - target: {fileID: 6278412420814106094, guid: 2548aebc15331404dbe3520e53049e29, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6278412420816006926, guid: 2548aebc15331404dbe3520e53049e29, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7697,6 +7664,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6278412420818197902, guid: 2548aebc15331404dbe3520e53049e29, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7733,7 +7704,6 @@ MonoBehaviour:
   x: 0
   y: 0
   z: 0
-  i: 0
 --- !u!54 &5775032007470231401
 Rigidbody:
   m_ObjectHideFlags: 0
