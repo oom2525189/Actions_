@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class tamesi : MonoBehaviour
 {
-    float speed = 10.0f;
+    float speed = 0.4f;
 
     void Update()
     {
         // Wキー（前方移動）
         if (Input.GetKey(KeyCode.W))
         {
-            transform.position += speed * transform.forward * Time.deltaTime;
+            transform.position += speed * transform.up * Time.deltaTime;
         }
 
         // Sキー（後方移動）
         if (Input.GetKey(KeyCode.S))
         {
-            transform.position -= speed * transform.forward * Time.deltaTime;
+            transform.position -= speed * transform.up * Time.deltaTime;
         }
 
         // Dキー（右移動）
