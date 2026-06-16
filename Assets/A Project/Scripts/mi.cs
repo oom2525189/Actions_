@@ -13,9 +13,18 @@ public class mi : MonoBehaviour
     // Update is called once per frame
 
     public float speed = -30.0f;
+    int i = 0;
     void Update()
     {
-        transform.Rotate(0, speed * Time.deltaTime, 0);
+        if (Input.GetKey(KeyCode.P))
+            i = 1;
+
+        if ((i==1))
+        {
+           
+            transform.Rotate(0, speed * Time.deltaTime, 0);
+        }
+        
     }
 }
 
