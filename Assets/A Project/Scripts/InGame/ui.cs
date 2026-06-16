@@ -96,6 +96,9 @@ public class ui : MonoBehaviour
                 if ((hitLayer & wallLayer) != 0)
                 {
                     Debug.Log("壁に当たった");
+                    TutorialManager.Instance.CompleteCondition(
+                       TutorialConditionType.Destroy
+                   );
                     return;
                 }
 
@@ -116,9 +119,7 @@ public class ui : MonoBehaviour
 
                     Destroy(hit.collider.gameObject);
 
-                    TutorialManager.Instance.CompleteCondition(
-                        TutorialConditionType.Destroy
-                    );
+                   
                 }
             }
         }
