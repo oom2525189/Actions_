@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 1
+  timeLimit: 90
   timerText: {fileID: 589916534}
   centerTimerText: {fileID: 458440300}
   flashImage: {fileID: 2120615837}
@@ -8040,7 +8040,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348908744}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 4c98fa94e4b8bbf49bd643588a6db410, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: c27d12bb5f8f8d3409ccf99b205aabc8, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

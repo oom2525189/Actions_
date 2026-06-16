@@ -6255,7 +6255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1721811435}
-  distance: 1
+  distance: 3
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7776,8 +7776,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9021483, y: 1.7013807, z: 0.20529863}
-  m_Center: {x: 0.10883049, y: 0.79672194, z: -0.14151916}
+  m_Size: {x: 0.9021483, y: 0.2052986, z: 1.701381}
+  m_Center: {x: 0, y: 1.2, z: -0.1415192}
 --- !u!114 &2065400041
 MonoBehaviour:
   m_ObjectHideFlags: 0
