@@ -13,6 +13,12 @@ public class SoundSlider : MonoBehaviour
     [SerializeField]
     private SoundType soundType;
 
+    [SerializeField]
+    private AudioClip previewSE;
+
+    [SerializeField]
+    private AudioClip previewClock;
+
     void Start()
     {
         Slider slider = GetComponent<Slider>();
@@ -53,10 +59,28 @@ public class SoundSlider : MonoBehaviour
 
             case SoundType.SE:
                 SoundManager.instance.SetSEVolume(volume);
+
+                if (previewSE != null)
+                {
+                    AudioSource.PlayClipAtPoint(
+                        previewSE,
+                        Vector3.zero,
+                        volume
+                    );
+                }
                 break;
 
             case SoundType.CLOCK:
                 SoundManager.instance.SetClockVolume(volume);
+
+                if (previewClock != null)
+                {
+                    AudioSource.PlayClipAtPoint(
+                        previewClock,
+                        Vector3.zero,
+                        volume
+                    );
+                }
                 break;
         }
     }
