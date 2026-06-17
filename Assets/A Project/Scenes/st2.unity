@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 1
+  timeLimit: 90
   timerText: {fileID: 589916534}
   centerTimerText: {fileID: 458440300}
   flashImage: {fileID: 2120615837}

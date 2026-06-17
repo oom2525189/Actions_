@@ -7284,7 +7284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 1
+  timeLimit: 20
   timerText: {fileID: 1909306225}
   centerTimerText: {fileID: 202316749}
   flashImage: {fileID: 1835690504}
