@@ -5647,7 +5647,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2d42c7b0125a55e438b3eabb155a4821, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3c2f8c249e0b04f40945f36b850ae091, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6254,7 +6254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffd4058caf05fc449af4db5e07fd238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1721811435}
+  mainCamera: {fileID: 1721811433}
   distance: 3
   targetLayer:
     serializedVersion: 2
@@ -6279,7 +6279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 60
+  timeLimit: 1
   timerText: {fileID: 1909306225}
   centerTimerText: {fileID: 202316749}
   flashImage: {fileID: 1835690504}
