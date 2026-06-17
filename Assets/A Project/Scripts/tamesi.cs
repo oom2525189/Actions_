@@ -16,10 +16,10 @@ public class tamesi : MonoBehaviour
 
     //        // Sキー（後方移動）
     //        if (Input.GetKey(KeyCode.S))
-    //        {
+    //        {transform.position -= speed * transform.up * Time.deltaTime; 上下
     //            transform.position -= speed * transform.forward * Time.deltaTime;
     //        }
-    //        //transform.position -= speed * transform.up * Time.deltaTime; 上下
+    //        //
     //        float h = Input.GetAxis("Horizontal");
     //        transform.Rotate(0, h * Speed * Time.deltaTime, 0);
 
@@ -37,6 +37,7 @@ public class tamesi : MonoBehaviour
     //    }
 
     public float speed = 15f;
+    public float peed = 0.2f;
     public float turnSpeed = 120f;
     public float driftGrip = 2f;
     private Vector3 moveDir;
@@ -61,5 +62,10 @@ public class tamesi : MonoBehaviour
         // 移動
         if (Input.GetKey(KeyCode.W))
             transform.position += moveDir * speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.position -= peed * transform.up * Time.deltaTime; //上下
+    //            transform.position -= speed * transform.forward * Time.deltaTime;
+            }
     }
 }

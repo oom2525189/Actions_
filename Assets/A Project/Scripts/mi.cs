@@ -17,12 +17,12 @@ public class mi : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.P))
-            i = 1;
+            transform.Rotate(0, speed * Time.deltaTime, 0);
 
         if ((i==1))
         {
            
-            transform.Rotate(0, speed * Time.deltaTime, 0);
+            
         }
         
     }
