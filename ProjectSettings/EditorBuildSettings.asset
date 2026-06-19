@@ -15,10 +15,10 @@ EditorBuildSettings:
     path: Assets/A Project/Scenes/st1.unity
     guid: 407ffa806fc884649bbdca893985784f
   - enabled: 1
-    path: Assets/A Project/Scenes/st2.unity
+    path: Assets/A Project/Scenes/st3.unity
     guid: 6e8ab4efe5f8a3e42bdec946cdbef9fb
   - enabled: 1
-    path: Assets/A Project/Scenes/st3.unity
+    path: Assets/A Project/Scenes/st2.unity
     guid: ba3ab157c70829e40974469545ccc1f5
   - enabled: 1
     path: Assets/A Project/Scenes/kuria.unity
@@ -35,5 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/A Project/Scenes/tutorial.unity
     guid: 6612476692910c146899c02b124109c5
+  - enabled: 1
+    path: Assets/A Project/Scenes/enndororu.unity
+    guid: c91d96d6d803d9248aaf699d27d32946
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
