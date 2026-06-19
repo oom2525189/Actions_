@@ -48,6 +48,25 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void PlayBGM(AudioClip clip)
+    {
+        if (bgmAudioSource == null || clip == null) return;
+
+        // すでに同じBGMが流れている場合は、最初から再生し直さないようにする
+        if (bgmAudioSource.clip == clip && bgmAudioSource.isPlaying) return;
+
+        bgmAudioSource.clip = clip;
+        bgmAudioSource.Play();
+    }
+
+    public void StopBGM()
+    {
+        if (bgmAudioSource != null && bgmAudioSource.isPlaying)
+        {
+            bgmAudioSource.Stop();
+        }
+    }
+
     private void LoadVolume()
     {
         float savedBGMVolume =

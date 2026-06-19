@@ -1321,6 +1321,7 @@ GameObject:
   - component: {fileID: 310793662}
   - component: {fileID: 310793661}
   - component: {fileID: 310793660}
+  - component: {fileID: 310793664}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -1518,6 +1519,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310793658}
   m_CullTransparentMesh: 1
+--- !u!114 &310793664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310793658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2de9a56232a244bedf6af42ad6782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &324845752
 GameObject:
   m_ObjectHideFlags: 0
@@ -3053,7 +3066,7 @@ VideoPlayer:
   - 1
   m_Url: 
   m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
+  m_DirectAudioMutes: 01
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
@@ -3981,6 +3994,7 @@ GameObject:
   - component: {fileID: 1142710193}
   - component: {fileID: 1142710192}
   - component: {fileID: 1142710191}
+  - component: {fileID: 1142710194}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -4201,6 +4215,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142710189}
   m_CullTransparentMesh: 1
+--- !u!114 &1142710194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142710189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2de9a56232a244bedf6af42ad6782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1185911857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4548,6 +4574,7 @@ MonoBehaviour:
     m_Bits: 0
   rayRadius: 0.05
   gamekuriaPanel: {fileID: 2029410641}
+  fadeImage: {fileID: 0}
 --- !u!114 &1415253287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4579,6 +4606,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1499024961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499024963}
+  - component: {fileID: 1499024962}
+  m_Layer: 0
+  m_Name: StageBGMController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1499024962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499024961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5158006cb5cf1ee428dbdffad9ca2f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageBGM: {fileID: 8300000, guid: 68f04c9b2c6a43544adc23fe0430eccf, type: 3}
+  kuriaPanel: {fileID: 2029410641}
+  gameoverPanel: {fileID: 310793658}
+--- !u!4 &1499024963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499024961}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 836.5438, y: 166.2757, z: -2138.1892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1566176604
 GameObject:
@@ -6193,6 +6267,7 @@ GameObject:
   - component: {fileID: 2029410645}
   - component: {fileID: 2029410644}
   - component: {fileID: 2029410643}
+  - component: {fileID: 2029410647}
   m_Layer: 5
   m_Name: kuria
   m_TagString: Untagged
@@ -6389,6 +6464,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029410641}
   m_CullTransparentMesh: 1
+--- !u!114 &2029410647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029410641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad2de9a56232a244bedf6af42ad6782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2031877178
 GameObject:
   m_ObjectHideFlags: 0
