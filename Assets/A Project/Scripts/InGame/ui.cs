@@ -147,7 +147,10 @@ public class ui : MonoBehaviour
         {
             gamekuriaPanel.SetActive(true);
         }
-        Time.timeScale = 0f;
-        }
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(13f);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("enndororu");
+    }
     }
 
