@@ -17,6 +17,8 @@ public class ui : MonoBehaviour
 
     public GameObject gamekuriaPanel;
     [SerializeField] private Image fadeImage;
+    [Header("クリア時に流すBGM")]
+    [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
     //private LineRenderer lineRenderer;
 
@@ -161,7 +163,10 @@ public class ui : MonoBehaviour
         yield return new WaitForSeconds(delay);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        //SceneManager.LoadScene("kuria");
+        if (SoundManager.instance != null && clearBGM != null)
+        {
+            SoundManager.instance.PlayBGM(clearBGM);
+        }
         if (gamekuriaPanel != null)
         {
             gamekuriaPanel.SetActive(true);

@@ -56,6 +56,10 @@ public class CreditsScroller : MonoBehaviour
 
     IEnumerator ReturnToTitle()
     {
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.StopBGM();
+        }
         yield return new WaitForSeconds(2f); // 2秒待つ
         SceneManager.LoadScene("Title");
     }
