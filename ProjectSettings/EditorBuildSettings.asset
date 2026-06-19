@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/A Project/Scenes/matumoto.unity
-    guid: ce7993a58820be642a34fdf111b3dda9
   - enabled: 1
     path: Assets/A Project/Scenes/Title.unity
     guid: 584b6920295b71e40b63ae00e1aa0f56
@@ -15,23 +12,14 @@ EditorBuildSettings:
     path: Assets/A Project/Scenes/st1.unity
     guid: 407ffa806fc884649bbdca893985784f
   - enabled: 1
-    path: Assets/A Project/Scenes/st3.unity
+    path: Assets/A Project/Scenes/st2.unity
     guid: 6e8ab4efe5f8a3e42bdec946cdbef9fb
   - enabled: 1
-    path: Assets/A Project/Scenes/st2.unity
+    path: Assets/A Project/Scenes/st3.unity
     guid: ba3ab157c70829e40974469545ccc1f5
   - enabled: 1
     path: Assets/A Project/Scenes/kuria.unity
     guid: 08e91f3728602ca4f88c776328ac024e
-  - enabled: 0
-    path: Assets/gmaeover.unity
-    guid: 5b5fa4b0936baac4bb7f08574b23355f
-  - enabled: 0
-    path: Assets/A Project/Scenes/abe.unity
-    guid: 1c1e5a59c7461f74bad07b223c2570d8
-  - enabled: 0
-    path: Assets/A Project/Scenes/ie.unity
-    guid: d74cb37e471fb204ca28b948c9b4745f
   - enabled: 1
     path: Assets/A Project/Scenes/tutorial.unity
     guid: 6612476692910c146899c02b124109c5
