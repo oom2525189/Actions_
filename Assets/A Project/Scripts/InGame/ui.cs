@@ -2,6 +2,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ui : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class ui : MonoBehaviour
     public float rayRadius = 0.5f;
 
     public GameObject gamekuriaPanel;
-
+    [SerializeField] private Image fadeImage;
+    [Header("クリア時に流すBGM")]
+    [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
     //private LineRenderer lineRenderer;
 
@@ -160,13 +163,28 @@ public class ui : MonoBehaviour
         yield return new WaitForSeconds(delay);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-        //SceneManager.LoadScene("kuria");
+        if (SoundManager.instance != null && clearBGM != null)
+        {
+            SoundManager.instance.PlayBGM(clearBGM);
+        }
         if (gamekuriaPanel != null)
         {
             gamekuriaPanel.SetActive(true);
         }
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(13f);
+        float t = 0f;
+
+        while (t < 1f)
+        {
+            t += Time.unscaledDeltaTime;
+
+            Color c = fadeImage.color;
+            c.a = t;
+            fadeImage.color = c;
+
+            yield return null;
+        }
         Time.timeScale = 1;
         SceneManager.LoadScene("enndororu");
     }
