@@ -11,6 +11,7 @@ public class ui : MonoBehaviour
     public LayerMask targetLayer;
     public LayerMask dummyLayer;
     public LayerMask wallLayer;
+    public LayerMask Tutorial;
     public float rayRadius = 0.5f;
 
     public GameObject gamekuriaPanel;
@@ -57,7 +58,8 @@ public class ui : MonoBehaviour
         LayerMask hitLayers =
             targetLayer |
             dummyLayer |
-            wallLayer;
+            wallLayer|
+            Tutorial;
 
         //// レーザー表示
         //if (Physics.SphereCast(
@@ -96,9 +98,7 @@ public class ui : MonoBehaviour
                 if ((hitLayer & wallLayer) != 0)
                 {
                     Debug.Log("壁に当たった");
-                    TutorialManager.Instance.CompleteCondition(
-                       TutorialConditionType.Destroy
-                   );
+
                     return;
                 }
 
@@ -118,8 +118,26 @@ public class ui : MonoBehaviour
                     Debug.Log("ダミー");
 
                     Destroy(hit.collider.gameObject);
+                }
+                else if ((hitLayer & Tutorial) != 0)
+                {
 
-                   
+                    GameObject obj = hit.collider.gameObject;
+
+                    // 複製を作成
+                    GameObject clone = Instantiate(
+                        obj,
+                        obj.transform.position,
+                        obj.transform.rotation
+                    );
+
+                    // 元のオブジェクトを削除
+                    Destroy(obj);
+
+                    TutorialManager.Instance.CompleteCondition(
+                       TutorialConditionType.Destroy
+                   );
+                    return;
                 }
             }
         }

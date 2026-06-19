@@ -4163,6 +4163,9 @@ MonoBehaviour:
     m_Bits: 0
   wallLayer:
     serializedVersion: 2
+    m_Bits: 0
+  Tutorial:
+    serializedVersion: 2
     m_Bits: 4294967295
   rayRadius: 0.05
   gamekuriaPanel: {fileID: 0}
