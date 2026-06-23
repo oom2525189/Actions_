@@ -61,10 +61,18 @@ public class SoundManager : MonoBehaviour
 
     public void StopBGM()
     {
-        if (bgmAudioSource != null && bgmAudioSource.isPlaying)
+        if (bgmAudioSource != null/* && bgmAudioSource.isPlaying*/)
         {
             bgmAudioSource.Stop();
+            bgmAudioSource.clip = null;
         }
+    }
+
+    public void PlayPreviewSE(AudioClip clip, float volume)
+    {
+        if (seAudioSource == null || clip == null) return;
+
+        seAudioSource.PlayOneShot(clip, volume);
     }
 
     private void LoadVolume()
