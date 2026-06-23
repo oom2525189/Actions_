@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class SoundSlider : MonoBehaviour
 {
+    
     private enum SoundType
     {
         BGM,
@@ -12,12 +13,19 @@ public class SoundSlider : MonoBehaviour
 
     [SerializeField]
     private SoundType soundType;
+    [SerializeField]
+    private AudioClip previewSE;
+    [SerializeField]
+    private AudioClip previewClock;
 
     void Start()
     {
         Slider slider = GetComponent<Slider>();
 
-        if (slider == null) return;
+        if (slider == null)
+        {
+            return;
+        }
 
         string key = "";
 
@@ -39,6 +47,32 @@ public class SoundSlider : MonoBehaviour
         slider.value = PlayerPrefs.GetFloat(key, 0.5f);
 
         slider.onValueChanged.AddListener(OnVolumeChanged);
+
+        //Debug.Log(gameObject.name + " のSoundSlider Start");
+        //Slider slider = GetComponent<Slider>();
+
+        //if (slider == null) return;
+
+        //string key = "";
+
+        //switch (soundType)
+        //{
+        //    case SoundType.BGM:
+        //        key = SoundManager.BGM_VOLUME_KEY;
+        //        break;
+
+        //    case SoundType.SE:
+        //        key = SoundManager.SE_VOLUME_KEY;
+        //        break;
+
+        //    case SoundType.CLOCK:
+        //        key = SoundManager.CLOCK_VOLUME_KEY;
+        //        break;
+        //}
+
+        //slider.value = PlayerPrefs.GetFloat(key, 0.5f);
+
+        //slider.onValueChanged.AddListener(OnVolumeChanged);
     }
 
     private void OnVolumeChanged(float volume)
@@ -53,10 +87,26 @@ public class SoundSlider : MonoBehaviour
 
             case SoundType.SE:
                 SoundManager.instance.SetSEVolume(volume);
+
+                if (previewSE != null)
+                {
+                    SoundManager.instance.PlayPreviewSE(
+                        previewSE,
+                        volume
+                    );
+                }
                 break;
 
             case SoundType.CLOCK:
                 SoundManager.instance.SetClockVolume(volume);
+
+                if (previewClock != null)
+                {
+                    SoundManager.instance.PlayPreviewSE(
+                        previewClock,
+                        volume
+                    );
+                }
                 break;
         }
     }
