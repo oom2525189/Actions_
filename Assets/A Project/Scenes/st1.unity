@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18352453, g: 0.22760068, b: 0.29710183, a: 1}
+  m_IndirectSpecularColor: {r: 0.18352456, g: 0.22760075, b: 0.29710245, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5742,9 +5742,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayRadius: 0.05
+  stageNumber: 1
   gamekuriaPanel: {fileID: 2029410641}
   fadeImage: {fileID: 0}
-  clearBGM: {fileID: 0}
+  clearBGM: {fileID: 8300000, guid: 71a718528229361408bed624daa191ef, type: 3}
 --- !u!114 &1415253287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5762,6 +5763,8 @@ MonoBehaviour:
   centerTimerText: {fileID: 1142710192}
   flashImage: {fileID: 241869794}
   gameOverPanel: {fileID: 310793658}
+  gameoverBGM: {fileID: 0}
+  clockAudioSource: {fileID: 211523882}
 --- !u!4 &1415253288
 Transform:
   m_ObjectHideFlags: 0
@@ -5914,8 +5917,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageBGM: {fileID: 8300000, guid: 68f04c9b2c6a43544adc23fe0430eccf, type: 3}
-  kuriaPanel: {fileID: 2029410641}
-  gameoverPanel: {fileID: 310793658}
 --- !u!4 &1499024963
 Transform:
   m_ObjectHideFlags: 0
@@ -7107,7 +7108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 12139822}
-  timeLimit: 60
 --- !u!114 &1814988459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8238,7 +8238,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 71a718528229361408bed624daa191ef, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

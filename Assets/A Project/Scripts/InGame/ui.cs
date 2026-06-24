@@ -14,33 +14,16 @@ public class ui : MonoBehaviour
     public LayerMask wallLayer;
     public LayerMask Tutorial;
     public float rayRadius = 0.5f;
+    [SerializeField] private int stageNumber;
 
     public GameObject gamekuriaPanel;
     [SerializeField] private Image fadeImage;
     [Header("クリア時に流すBGM")]
     [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
-    //private LineRenderer lineRenderer;
 
     void Start()
     {
-        //lineRenderer = gameObject.AddComponent<LineRenderer>();
-
-        //lineRenderer.positionCount = 2;
-        //lineRenderer.startWidth = 0.2f;
-        //lineRenderer.endWidth = 0.2f;
-        //lineRenderer.useWorldSpace = true;
-
-        //Material mat = new Material(
-        //    Shader.Find("Sprites/Default")
-        //);
-
-        //mat.color = Color.red;
-        //lineRenderer.material = mat;
-
-        //lineRenderer.startColor = Color.red;
-        //lineRenderer.endColor = Color.red;
-
         if (gamekuriaPanel != null)
         {
             gamekuriaPanel.SetActive(false);
@@ -49,10 +32,6 @@ public class ui : MonoBehaviour
 
     void Update()
     {
-        //Vector3 startPos =
-        //    mainCamera.transform.position +
-        //    mainCamera.transform.forward * 0.5f;
-
         Ray ray = new Ray(
             mainCamera.transform.position,
             mainCamera.transform.forward
@@ -63,26 +42,6 @@ public class ui : MonoBehaviour
             dummyLayer |
             wallLayer|
             Tutorial;
-
-        //// レーザー表示
-        //if (Physics.SphereCast(
-        //    ray,
-        //    rayRadius,
-        //    out RaycastHit laserHit,
-        //    distance,
-        //    hitLayers))
-        //{
-        //    lineRenderer.SetPosition(0, startPos);
-        //    lineRenderer.SetPosition(1, laserHit.point);
-        //}
-        //else
-        //{
-        //    lineRenderer.SetPosition(0, startPos);
-        //    lineRenderer.SetPosition(
-        //        1,
-        //        startPos + mainCamera.transform.forward * distance
-        //    );
-        //}
 
         // クリック時
         if (Input.GetMouseButtonDown(0) && !isLoading)
@@ -170,6 +129,9 @@ public class ui : MonoBehaviour
         if (gamekuriaPanel != null)
         {
             gamekuriaPanel.SetActive(true);
+            PlayerPrefs.SetInt($"Stage{stageNumber}Clear", 1);
+            PlayerPrefs.Save();
+            Debug.Log($"Stage{stageNumber}Clear を保存");
         }
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(13f);
@@ -186,6 +148,7 @@ public class ui : MonoBehaviour
             yield return null;
         }
         Time.timeScale = 1;
+
         SceneManager.LoadScene("enndororu");
     }
 }

@@ -4,11 +4,14 @@ using UnityEngine.SceneManagement;
 public class PauseGame : MonoBehaviour
 {
     public GameObject menuUI;
-    public float timeLimit = 60f;
     private bool isPaused = false;
-
+    NewBehaviourScript time;//取得したいスクリプトを宣言
     void Start()
-    {
+    {//取得したいスクリプトがアタッチしてあるオブジェクトを取得
+        GameObject game = GameObject.Find("GameObject");
+        //取得したオブジェクトのスクリプトを宣言したスクリプトに入れる
+        time = game.GetComponent<NewBehaviourScript>();
+        
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -16,17 +19,7 @@ public class PauseGame : MonoBehaviour
 
     void Update()
     {
-        if (!isPaused)
-        {
-            timeLimit -= Time.deltaTime;
-
-            if (timeLimit < 0)
-            {
-                timeLimit = 0;
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape) && timeLimit > 0)
+        if (Input.GetKeyDown(KeyCode.Escape) && time.timeLimit > 0)
         {
             TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
 

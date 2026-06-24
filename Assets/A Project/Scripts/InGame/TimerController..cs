@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.Android.Gradle;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,9 @@ public class NewBehaviourScript : MonoBehaviour
     // 白フラッシュ
     public Image flashImage;
 
-    public GameObject gameOverPanel;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private AudioClip gameoverBGM;
+    [SerializeField] private AudioSource clockAudioSource;
 
     private bool isGameOver = false;
 
@@ -153,6 +156,16 @@ public class NewBehaviourScript : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
+        ClockVolume[] clocks = FindObjectsByType<ClockVolume>(FindObjectsSortMode.None);
+        foreach (ClockVolume clock in clocks)
+        {
+            AudioSource audio = clock.GetComponent<AudioSource>();
+
+            if (audio != null)
+            {
+                audio.Stop();
+            }
+        }
         Debug.Log("ゲーム終了");
         Time.timeScale = 0f;
         AudioListener.pause = false;
@@ -161,6 +174,10 @@ public class NewBehaviourScript : MonoBehaviour
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
+            if (SoundManager.instance != null && gameoverBGM != null)
+            {
+                SoundManager.instance.PlayBGM(gameoverBGM);
+            }
         }
     }
 }
