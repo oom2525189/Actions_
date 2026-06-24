@@ -7112,7 +7112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 959465948}
-  timeLimit: 60
 --- !u!114 &1417940969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9426,6 +9425,7 @@ MonoBehaviour:
   flashImage: {fileID: 1835690504}
   gameOverPanel: {fileID: 204491169}
   gameoverBGM: {fileID: 8300000, guid: 2d935d51eb564d640a9a2c646e9d5a97, type: 3}
+  clockAudioSource: {fileID: 2065400038}
 --- !u!4 &1859100385
 Transform:
   m_ObjectHideFlags: 0

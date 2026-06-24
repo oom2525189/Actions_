@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.Android.Gradle;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private AudioClip gameoverBGM;
+    [SerializeField] private AudioSource clockAudioSource;
 
     private bool isGameOver = false;
 
@@ -154,6 +156,16 @@ public class NewBehaviourScript : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
+        ClockVolume[] clocks = FindObjectsByType<ClockVolume>(FindObjectsSortMode.None);
+        foreach (ClockVolume clock in clocks)
+        {
+            AudioSource audio = clock.GetComponent<AudioSource>();
+
+            if (audio != null)
+            {
+                audio.Stop();
+            }
+        }
         Debug.Log("ゲーム終了");
         Time.timeScale = 0f;
         AudioListener.pause = false;
