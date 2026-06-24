@@ -2316,6 +2316,8 @@ MonoBehaviour:
   operationPanel: {fileID: 50039818}
   configPanel: {fileID: 1815716522}
   quitPanel: {fileID: 376328248}
+  stage2Button: {fileID: 1645353061}
+  stage3Button: {fileID: 888037347}
 --- !u!4 &559735337
 Transform:
   m_ObjectHideFlags: 0

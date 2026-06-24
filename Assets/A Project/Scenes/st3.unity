@@ -9404,6 +9404,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   rayRadius: 0.05
+  stageNumber: 3
   gamekuriaPanel: {fileID: 1610625177}
   fadeImage: {fileID: 2047522354}
   clearBGM: {fileID: 8300000, guid: 3c2f8c249e0b04f40945f36b850ae091, type: 3}

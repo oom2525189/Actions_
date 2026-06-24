@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -8,6 +9,20 @@ public class MenuManager : MonoBehaviour
     public GameObject operationPanel;
     public GameObject configPanel;
     public GameObject quitPanel;
+    public Button stage2Button;
+    public Button stage3Button;
+
+    void Start()
+    {
+        Debug.Log("MenuManager Start");
+        Debug.Log("Stage1Clear = " + PlayerPrefs.GetInt("Stage1Clear", 0));
+        Debug.Log("Stage2Clear = " + PlayerPrefs.GetInt("Stage2Clear", 0));
+        stage2Button.interactable =
+            PlayerPrefs.GetInt("Stage1Clear", 0) == 1;
+
+        stage3Button.interactable =
+            PlayerPrefs.GetInt("Stage2Clear", 0) == 1;
+    }
 
     // ===== Panel切替 =====
 
@@ -67,11 +82,15 @@ public class MenuManager : MonoBehaviour
 
     public void LoadStage2()
     {
+        if (PlayerPrefs.GetInt("Stage1Clear", 0) == 0)
+            return;
         SceneManager.LoadScene("st2");
     }
 
     public void LoadStage3()
     {
+        if (PlayerPrefs.GetInt("Stage2Clear", 0) == 0)
+            return;
         SceneManager.LoadScene("st3");
     }
 
