@@ -67,16 +67,10 @@ public class MenuManager : MonoBehaviour
         quitPanel.SetActive(false);
     }
 
-    // ===== ゲーム開始 =====
-
-    public void StartGame()
-    {
-        //後でチュートリアル足すかも
-        SceneManager.LoadScene("st1");
-    }
-
     public void LoadStage1()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene("st1");
     }
 
@@ -84,6 +78,8 @@ public class MenuManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Stage1Clear", 0) == 0)
             return;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene("st2");
     }
 
@@ -91,6 +87,8 @@ public class MenuManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("Stage2Clear", 0) == 0)
             return;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene("st3");
     }
 
