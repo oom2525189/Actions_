@@ -2718,7 +2718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1144780494}
-  timeLimit: 60
 --- !u!114 &553320479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12902,8 +12901,9 @@ MonoBehaviour:
     m_Bits: 0
   Tutorial:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 64
   rayRadius: 0.05
+  stageNumber: 0
   gamekuriaPanel: {fileID: 0}
   fadeImage: {fileID: 0}
   clearBGM: {fileID: 0}
@@ -12924,6 +12924,8 @@ MonoBehaviour:
   centerTimerText: {fileID: 1125399302}
   flashImage: {fileID: 21680755}
   gameOverPanel: {fileID: 1636934691}
+  gameoverBGM: {fileID: 0}
+  clockAudioSource: {fileID: 0}
 --- !u!4 &2087062159
 Transform:
   m_ObjectHideFlags: 0
