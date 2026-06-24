@@ -15,7 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     // 白フラッシュ
     public Image flashImage;
 
-    public GameObject gameOverPanel;
+    [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private AudioClip gameoverBGM;
 
     private bool isGameOver = false;
