@@ -16,6 +16,7 @@ public class NewBehaviourScript : MonoBehaviour
     public Image flashImage;
 
     public GameObject gameOverPanel;
+    [SerializeField] private AudioClip gameoverBGM;
 
     private bool isGameOver = false;
 
@@ -161,6 +162,10 @@ public class NewBehaviourScript : MonoBehaviour
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
+            if (SoundManager.instance != null && gameoverBGM != null)
+            {
+                SoundManager.instance.PlayBGM(gameoverBGM);
+            }
         }
     }
 }
