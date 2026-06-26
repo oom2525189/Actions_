@@ -57,14 +57,14 @@ public class nige : MonoBehaviour
     void Update()
     {
         bCount = playerScript.i;
-        if (bCount >= 6 && bCount <= 9)
+        if (bCount >= 6 && bCount <= 10)
             idou = true;
 
             if (idou)
             {
 
 
-                if (bCount == 7 || bCount == 6)
+                if (bCount == 10 || bCount == 6 || bCount == 7)
                 {
                     run = false;
                     jump = true;
@@ -72,7 +72,7 @@ public class nige : MonoBehaviour
                 }
                 else if (bCount == 9)
                 {
-                    run = false;
+                    //run = false;
                     koke = true;
 
                 }
@@ -82,6 +82,8 @@ public class nige : MonoBehaviour
                     jump = false;
                     koke = false;
                 }
+            if (bCount != 9)
+            {
                 //スタート位置、ターゲットの座標、速度
                 transform.position = Vector3.MoveTowards(
               transform.position,
@@ -92,6 +94,7 @@ public class nige : MonoBehaviour
                 {
                     transform.rotation = Quaternion.LookRotation(direction);
                 }
+            }
             }
             else
             {
