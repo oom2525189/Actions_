@@ -5258,6 +5258,105 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3c06cdc241189e4a8e3b4418e1230ab, type: 3}
+--- !u!1 &956952124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 956952128}
+  - component: {fileID: 956952127}
+  - component: {fileID: 956952126}
+  - component: {fileID: 956952125}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &956952125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956952124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e1a7c7adf565b4a8097ee344ca8e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steps: []
+  tutorialText: {fileID: 0}
+--- !u!114 &956952126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956952124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffd4058caf05fc449af4db5e07fd238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 1721811433}
+  distance: 3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  dummyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  Tutorial:
+    serializedVersion: 2
+    m_Bits: 0
+  rayRadius: 0.05
+  stageNumber: 3
+  gamekuriaPanel: {fileID: 1610625177}
+  fadeImage: {fileID: 2047522354}
+  clearBGM: {fileID: 8300000, guid: 3c2f8c249e0b04f40945f36b850ae091, type: 3}
+  timerObject: {fileID: 0}
+--- !u!114 &956952127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956952124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 20
+  timerText: {fileID: 1909306225}
+  centerTimerText: {fileID: 202316749}
+  flashImage: {fileID: 1835690504}
+  gameOverPanel: {fileID: 204491169}
+  gameoverBGM: {fileID: 8300000, guid: 2d935d51eb564d640a9a2c646e9d5a97, type: 3}
+  warningAudioSource: {fileID: 858113514}
+--- !u!4 &956952128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956952124}
+  m_LocalRotation: {x: -0, y: -0, z: -0.000000014901159, w: 1}
+  m_LocalPosition: {x: 54.322586, y: 19.05751, z: 8.102206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &959465948
 GameObject:
   m_ObjectHideFlags: 0
@@ -7248,7 +7347,6 @@ MonoBehaviour:
   Hammer_01: {fileID: 996748279}
   swingSpeed: 10
   sound1: {fileID: 8300000, guid: 03f98c9fbb9acde45b5d4ee746fcca1a, type: 3}
-  player: {fileID: 0}
 --- !u!114 &1417940971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9464,105 +9562,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835690502}
   m_CullTransparentMesh: 1
---- !u!1 &1859100382
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1859100385}
-  - component: {fileID: 1859100384}
-  - component: {fileID: 1859100383}
-  - component: {fileID: 1859100386}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1859100383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859100382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffd4058caf05fc449af4db5e07fd238, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainCamera: {fileID: 1721811433}
-  distance: 3
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  dummyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  Tutorial:
-    serializedVersion: 2
-    m_Bits: 0
-  rayRadius: 0.05
-  stageNumber: 3
-  gamekuriaPanel: {fileID: 1610625177}
-  fadeImage: {fileID: 2047522354}
-  clearBGM: {fileID: 8300000, guid: 3c2f8c249e0b04f40945f36b850ae091, type: 3}
-  timerObject: {fileID: 0}
---- !u!114 &1859100384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859100382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeLimit: 20
-  timerText: {fileID: 1909306225}
-  centerTimerText: {fileID: 202316749}
-  flashImage: {fileID: 1835690504}
-  gameOverPanel: {fileID: 204491169}
-  gameoverBGM: {fileID: 8300000, guid: 2d935d51eb564d640a9a2c646e9d5a97, type: 3}
-  warningAudioSource: {fileID: 858113514}
---- !u!4 &1859100385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859100382}
-  m_LocalRotation: {x: -0, y: -0, z: -0.000000014901159, w: 1}
-  m_LocalPosition: {x: 54.322586, y: 19.05751, z: 8.102206}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1859100386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1859100382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74e1a7c7adf565b4a8097ee344ca8e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  steps: []
-  tutorialText: {fileID: 0}
 --- !u!1 &1909306223
 GameObject:
   m_ObjectHideFlags: 0

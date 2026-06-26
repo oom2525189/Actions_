@@ -16,6 +16,17 @@ public class PauseGame : MonoBehaviour
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Debug.Log(time);
+        Debug.Log(kuria);
+        Debug.Log(kuria?.gamekuriaPanel);
+        if (time == null)
+            Debug.LogError("time が取得できていません");
+
+        if (kuria == null)
+            Debug.LogError("kuria が取得できていません");
+
+        if (kuria != null && kuria.gamekuriaPanel == null)
+            Debug.LogError("gamekuriaPanel が設定されていません");
     }
 
     void Update()
