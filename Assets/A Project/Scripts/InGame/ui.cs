@@ -21,7 +21,7 @@ public class ui : MonoBehaviour
     [Header("クリア時に流すBGM")]
     [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
-    [SerializeField] private GameObject timerObject;
+   
 
     void Start()
     {

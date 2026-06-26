@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bd38e64d6400741be75e08519ecf47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 15
+  timeLimit: 90
   timerText: {fileID: 589916534}
   centerTimerText: {fileID: 458440300}
   flashImage: {fileID: 2120615837}
@@ -9465,7 +9465,6 @@ MonoBehaviour:
   Hammer_01: {fileID: 720843836}
   swingSpeed: 10
   sound1: {fileID: 8300000, guid: 03f98c9fbb9acde45b5d4ee746fcca1a, type: 3}
-  player: {fileID: 1135837583}
 --- !u!114 &1135837578
 MonoBehaviour:
   m_ObjectHideFlags: 0

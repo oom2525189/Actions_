@@ -4732,10 +4732,10 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 18d41ad32f1e37242b35c2e577a10f28, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -5322,7 +5322,6 @@ MonoBehaviour:
   gamekuriaPanel: {fileID: 1610625177}
   fadeImage: {fileID: 2047522354}
   clearBGM: {fileID: 8300000, guid: 3c2f8c249e0b04f40945f36b850ae091, type: 3}
-  timerObject: {fileID: 0}
 --- !u!114 &956952127
 MonoBehaviour:
   m_ObjectHideFlags: 0
