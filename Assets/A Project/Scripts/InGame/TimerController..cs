@@ -26,6 +26,11 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start");
+        if (warningAudioSource != null)
+        {
+            warningAudioSource.Stop();
+        }
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
@@ -37,6 +42,10 @@ public class NewBehaviourScript : MonoBehaviour
         Color color = Color.white;
         color.a = 0f;
         flashImage.color = color;
+    }
+
+    void Awake()
+    {
         if (warningAudioSource != null)
         {
             warningAudioSource.Stop();
@@ -106,11 +115,11 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 warningPlayed = true;
 
-                if (warningAudioSource != null)
-                {
+                //if (warningAudioSource != null)
+                //{
                     Debug.Log("警告音");
                     warningAudioSource.Play();
-                }
+                //}
             }
 
             // 点滅
