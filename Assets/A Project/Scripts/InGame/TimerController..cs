@@ -18,6 +18,7 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private AudioClip gameoverBGM;
     [SerializeField] private AudioSource clockAudioSource;
+    [SerializeField] private GameObject warningObject;
 
     private bool isGameOver = false;
 
@@ -34,6 +35,7 @@ public class NewBehaviourScript : MonoBehaviour
         Color color = Color.white;
         color.a = 0f;
         flashImage.color = color;
+        clockAudioSource.Stop();
     }
 
     void Update()
@@ -94,6 +96,10 @@ public class NewBehaviourScript : MonoBehaviour
         if (timeLimit <= 5f && timeLimit > 0)
         {
             centerTimerText.gameObject.SetActive(true);
+            if (!clockAudioSource.isPlaying)
+            {
+                clockAudioSource.Play();
+            }
 
             // 点滅
             bool centerBlink =
@@ -131,6 +137,7 @@ public class NewBehaviourScript : MonoBehaviour
         else
         {
             centerTimerText.gameObject.SetActive(false);
+            clockAudioSource.Stop();
 
             // サイズ戻す
             centerTimerText.transform.localScale =
@@ -150,11 +157,26 @@ public class NewBehaviourScript : MonoBehaviour
             GameOver();
         }
     }
-   
+
+    public void StopWarning()
+    {
+        centerTimerText.gameObject.SetActive(false);
+
+        if (clockAudioSource != null)
+        {
+            clockAudioSource.Stop();
+        }
+
+        if (warningObject != null)
+        {
+            warningObject.SetActive(false);
+        }
+    }
 
     void GameOver()
     {
         isGameOver = true;
+        clockAudioSource.Stop();
         ClockVolume[] clocks = FindObjectsByType<ClockVolume>(FindObjectsSortMode.None);
         foreach (ClockVolume clock in clocks)
         {
@@ -178,5 +200,11 @@ public class NewBehaviourScript : MonoBehaviour
                 SoundManager.instance.PlayBGM(gameoverBGM);
             }
         }
+    }
+
+    public void StopWarningSound()
+    {
+        centerTimerText.gameObject.SetActive(false);
+        clockAudioSource.Stop();
     }
 }

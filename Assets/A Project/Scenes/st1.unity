@@ -4844,7 +4844,7 @@ GameObject:
   - component: {fileID: 1142710193}
   - component: {fileID: 1142710192}
   - component: {fileID: 1142710191}
-  - component: {fileID: 1142710194}
+  - component: {fileID: 1142710195}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -5065,7 +5065,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142710189}
   m_CullTransparentMesh: 1
---- !u!114 &1142710194
+--- !u!114 &1142710195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5746,6 +5746,7 @@ MonoBehaviour:
   gamekuriaPanel: {fileID: 2029410641}
   fadeImage: {fileID: 0}
   clearBGM: {fileID: 8300000, guid: 71a718528229361408bed624daa191ef, type: 3}
+  timerObject: {fileID: 0}
 --- !u!114 &1415253287
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,7 +3,13 @@ guid: d3bd38e64d6400741be75e08519ecf47
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - timerText: {instanceID: 0}
+  - centerTimerText: {instanceID: 0}
+  - flashImage: {instanceID: 0}
+  - gameOverPanel: {instanceID: 0}
+  - gameoverBGM: {fileID: 8300000, guid: 7d230622da3e81f489e58a46e90b4da1, type: 3}
+  - clockAudioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
