@@ -17,7 +17,7 @@ public class hammer : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audioSource;
-    public Transform player;
+   
 
     private Vector3 savedPlayerPosition;
     void Start()
@@ -44,8 +44,7 @@ public class hammer : MonoBehaviour
     {
         isSwinging = true;
 
-        // 振り始めた瞬間のPlayerの位置を保存
-        savedPlayerPosition = player.position;
+       
         //float hitStart = -10f;
         //float hitEnd = 10f;
         // Playerを振り始めの位置へ戻す
