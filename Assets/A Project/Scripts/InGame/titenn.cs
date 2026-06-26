@@ -47,7 +47,11 @@ public class titenn : MonoBehaviour
                     i = 5;
                     break;
                 case 5:
-                    transform.position = new Vector3(22.97f, -9.359f, -16.028f);
+                    transform.position = new Vector3(22.97f, -10.1f, -15.028f);
+                    i = 10;
+                    break;
+                case 10:
+                    transform.position = new Vector3(22.97f, -9.359f/*- 10.1*/, -16.029f);
                     i = 6;
                     break;
                 case 6:
@@ -55,11 +59,11 @@ public class titenn : MonoBehaviour
                     i = 7;
                     break;
                 case 7:
-                    transform.position = new Vector3(20.55f, -11.6f, -22.76f);
+                    transform.position = new Vector3(20.55f, -11.784f, -22.82f);
                     i = 8;
                     break;
                 case 8:
-                    transform.position = new Vector3(20.601f, -11.9f, -24.22f);
+                    transform.position = new Vector3(20.601f, -11.8f, -26.25f);
                     i = 9;
                     break;
             }
