@@ -3494,7 +3494,9 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
+    - {fileID: 6400002, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
@@ -4844,7 +4846,7 @@ GameObject:
   - component: {fileID: 1142710193}
   - component: {fileID: 1142710192}
   - component: {fileID: 1142710191}
-  - component: {fileID: 1142710194}
+  - component: {fileID: 1142710195}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -5065,7 +5067,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142710189}
   m_CullTransparentMesh: 1
---- !u!114 &1142710194
+--- !u!114 &1142710195
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5746,6 +5748,7 @@ MonoBehaviour:
   gamekuriaPanel: {fileID: 2029410641}
   fadeImage: {fileID: 0}
   clearBGM: {fileID: 8300000, guid: 71a718528229361408bed624daa191ef, type: 3}
+  timerObject: {fileID: 0}
 --- !u!114 &1415253287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7138,6 +7141,7 @@ MonoBehaviour:
   Hammer_01: {fileID: 774066966}
   swingSpeed: 10
   sound1: {fileID: 8300000, guid: 03f98c9fbb9acde45b5d4ee746fcca1a, type: 3}
+  player: {fileID: 1814988466}
 --- !u!114 &1814988461
 MonoBehaviour:
   m_ObjectHideFlags: 0

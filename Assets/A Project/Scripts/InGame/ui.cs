@@ -21,6 +21,7 @@ public class ui : MonoBehaviour
     [Header("クリア時に流すBGM")]
     [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
+    [SerializeField] private GameObject timerObject;
 
     void Start()
     {
@@ -128,6 +129,14 @@ public class ui : MonoBehaviour
         }
         if (gamekuriaPanel != null)
         {
+            NewBehaviourScript timer =
+    FindFirstObjectByType<NewBehaviourScript>();
+
+            if (timer != null)
+            {
+                timer.StopWarning();
+            }
+
             gamekuriaPanel.SetActive(true);
             PlayerPrefs.SetInt($"Stage{stageNumber}Clear", 1);
             PlayerPrefs.Save();
