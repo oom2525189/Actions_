@@ -6,12 +6,13 @@ public class PauseGame : MonoBehaviour
     public GameObject menuUI;
     private bool isPaused = false;
     NewBehaviourScript time;//取得したいスクリプトを宣言
+    ui kuria;//取得したいスクリプトを宣言
     void Start()
     {//取得したいスクリプトがアタッチしてあるオブジェクトを取得
         GameObject game = GameObject.Find("GameObject");
         //取得したオブジェクトのスクリプトを宣言したスクリプトに入れる
         time = game.GetComponent<NewBehaviourScript>();
-        
+        kuria = game.GetComponent<ui>();
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -19,10 +20,10 @@ public class PauseGame : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && time.timeLimit > 0)
+        if (Input.GetKeyDown(KeyCode.Escape) && time.timeLimit > 0 && !kuria.gamekuriaPanel.activeSelf)
         {
             TutorialManager.Instance.CompleteCondition(TutorialConditionType.Pause);
-
+            Debug.Log("ポーズ");
             if (isPaused)
                 Resume();
             else

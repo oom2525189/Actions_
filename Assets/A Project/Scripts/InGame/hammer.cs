@@ -17,7 +17,9 @@ public class hammer : MonoBehaviour
 
     public AudioClip sound1;
     AudioSource audioSource;
+    public Transform player;
 
+    private Vector3 savedPlayerPosition;
     void Start()
     {
         currentAngle = baseAngle;
@@ -42,9 +44,12 @@ public class hammer : MonoBehaviour
     {
         isSwinging = true;
 
+        // 振り始めた瞬間のPlayerの位置を保存
+        savedPlayerPosition = player.position;
         //float hitStart = -10f;
         //float hitEnd = 10f;
-
+        // Playerを振り始めの位置へ戻す
+       
         // 振り（-45 → 20）
         while (currentAngle < targetAngle)
         {
@@ -69,7 +74,7 @@ public class hammer : MonoBehaviour
 
         // 戻り用の初期Y
         float returnY = -35f;
-
+        
         // 戻す（20 → -45）
         while (currentAngle > baseAngle)
         {
@@ -87,7 +92,9 @@ public class hammer : MonoBehaviour
         }
         // 最終的に完全リセット
         Hammer_01.localRotation = Quaternion.Euler(baseAngle, 0f, 90f);
-        //hammerCollider.enabled = false;
+
+
+        
         isSwinging = false;
     }
 }
