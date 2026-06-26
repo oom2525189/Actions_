@@ -129,17 +129,22 @@ public class ui : MonoBehaviour
         }
         if (gamekuriaPanel != null)
         {
+            // タイマーを取得
             NewBehaviourScript timer =
-    FindFirstObjectByType<NewBehaviourScript>();
+                FindFirstObjectByType<NewBehaviourScript>();
 
             if (timer != null)
             {
-                timer.StopWarning();
+                // 警告音停止
+                timer.StopWarningSE();
             }
 
+            // クリアパネル表示
             gamekuriaPanel.SetActive(true);
+
             PlayerPrefs.SetInt($"Stage{stageNumber}Clear", 1);
             PlayerPrefs.Save();
+
             Debug.Log($"Stage{stageNumber}Clear を保存");
         }
         Time.timeScale = 0;
