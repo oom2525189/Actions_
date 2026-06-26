@@ -7718,7 +7718,6 @@ MonoBehaviour:
   Hammer_01: {fileID: 774066966}
   swingSpeed: 10
   sound1: {fileID: 8300000, guid: 03f98c9fbb9acde45b5d4ee746fcca1a, type: 3}
-  player: {fileID: 1814988466}
 --- !u!114 &1814988461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8749,7 +8748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2029410642
 RectTransform:
   m_ObjectHideFlags: 0
