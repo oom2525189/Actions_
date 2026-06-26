@@ -15,10 +15,12 @@ public class NewBehaviourScript : MonoBehaviour
     // 白フラッシュ
     public Image flashImage;
 
+    private bool isClear = false;
+
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private AudioClip gameoverBGM;
-    [SerializeField] private AudioSource clockAudioSource;
-    [SerializeField] private GameObject warningObject;
+    [SerializeField] private AudioSource warningAudioSource;
+    private bool warningPlayed = false;
 
     private bool isGameOver = false;
 
@@ -35,7 +37,10 @@ public class NewBehaviourScript : MonoBehaviour
         Color color = Color.white;
         color.a = 0f;
         flashImage.color = color;
-        clockAudioSource.Stop();
+        if (warningAudioSource != null)
+        {
+            warningAudioSource.Stop();
+        }
     }
 
     void Update()
@@ -57,7 +62,8 @@ public class NewBehaviourScript : MonoBehaviour
 
         //    // 以下そのまま
         //}
-        if (isGameOver) return;
+        if (isGameOver || isClear)
+            return;
 
         timeLimit -= Time.deltaTime;
 
@@ -96,9 +102,15 @@ public class NewBehaviourScript : MonoBehaviour
         if (timeLimit <= 5f && timeLimit > 0)
         {
             centerTimerText.gameObject.SetActive(true);
-            if (!clockAudioSource.isPlaying)
+            if (!warningPlayed)
             {
-                clockAudioSource.Play();
+                warningPlayed = true;
+
+                if (warningAudioSource != null)
+                {
+                    Debug.Log("警告音");
+                    warningAudioSource.Play();
+                }
             }
 
             // 点滅
@@ -137,7 +149,12 @@ public class NewBehaviourScript : MonoBehaviour
         else
         {
             centerTimerText.gameObject.SetActive(false);
-            clockAudioSource.Stop();
+            warningPlayed = false;
+
+            if (warningAudioSource != null)
+            {
+                warningAudioSource.Stop();
+            }
 
             // サイズ戻す
             centerTimerText.transform.localScale =
@@ -158,25 +175,16 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
-    public void StopWarning()
-    {
-        centerTimerText.gameObject.SetActive(false);
-
-        if (clockAudioSource != null)
-        {
-            clockAudioSource.Stop();
-        }
-
-        if (warningObject != null)
-        {
-            warningObject.SetActive(false);
-        }
-    }
-
     void GameOver()
     {
         isGameOver = true;
-        clockAudioSource.Stop();
+        if (warningAudioSource != null)
+        {
+            warningAudioSource.Stop();
+        }
+
+        warningPlayed = false;
+        centerTimerText.gameObject.SetActive(false);
         ClockVolume[] clocks = FindObjectsByType<ClockVolume>(FindObjectsSortMode.None);
         foreach (ClockVolume clock in clocks)
         {
@@ -201,10 +209,14 @@ public class NewBehaviourScript : MonoBehaviour
             }
         }
     }
-
-    public void StopWarningSound()
+    public void StopWarningSE()
     {
+        isClear = true;
+        if (warningAudioSource != null)
+        {
+            warningAudioSource.Stop();
+        }
+
         centerTimerText.gameObject.SetActive(false);
-        clockAudioSource.Stop();
     }
 }
