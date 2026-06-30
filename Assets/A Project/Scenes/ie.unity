@@ -18351,7 +18351,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 0}
-  timeLimit: 60
 --- !u!114 &989590776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23075,7 +23074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0c16b205283e1d43b7e85603a8304d6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1234279849924444142, guid: b0c16b205283e1d43b7e85603a8304d6, type: 3}
       propertyPath: m_LocalPosition.x
