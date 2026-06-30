@@ -452,8 +452,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279769112
-  m_fontColor: {r: 0.09433961, g: 0.093004614, b: 0.093004614, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -12301,7 +12301,7 @@ MonoBehaviour:
   - message: "ESC\u3067\u30DD\u30FC\u30BA"
     conditionType: 4
     nextDelay: 0
-  - message: "\u518D\u958B\u30DD\u30BF\u3093\u3067\u30B2\u30FC\u30E0\u518D\u958B"
+  - message: "\u518D\u958B\u30DC\u30BF\u30F3\u3067\u30B2\u30FC\u30E0\u518D\u958B"
     conditionType: 5
     nextDelay: 0
   - message: "\u6A19\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
