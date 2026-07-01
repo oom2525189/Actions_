@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,36 +13,35 @@ public class NewBehaviourScript : MonoBehaviour
     // 中央の大きい数字
     public TMP_Text centerTimerText;
 
-    // 白フラッシュ
-    public Image flashImage;
-
-    private bool isClear = false;
-
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private AudioClip gameoverBGM;
     [SerializeField] private AudioSource warningAudioSource;
-    private bool warningPlayed = false;
 
+    private bool warningPlayed = false;
     private bool isGameOver = false;
+
+    // 20秒・10秒表示済みフラグ
+    private bool shown20 = false;
+    private bool shown10 = false;
+
+    // 中央表示中フラグ
+    private bool isShowingCenterNumber = false;
 
     void Start()
     {
         Debug.Log("Start");
+
         if (warningAudioSource != null)
         {
             warningAudioSource.Stop();
         }
+
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(false);
         }
 
         centerTimerText.gameObject.SetActive(false);
-
-        // フラッシュ透明化
-        Color color = Color.white;
-        color.a = 0f;
-        flashImage.color = color;
     }
 
     void Awake()
@@ -54,24 +54,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        //時間停止中でも動く
-        //void Update()
-        //{
-        //    if (isGameOver) return;
-
-        //    // ★ ここを変更
-        //    timeLimit -= Time.unscaledDeltaTime;
-
-        //    if (timeLimit < 0)
-        //    {
-        //        timeLimit = 0;
-        //    }
-
-        //    int displayTime = Mathf.CeilToInt(timeLimit);
-
-        //    // 以下そのまま
-        //}
-        if (isGameOver || isClear)
+        if (isGameOver)
             return;
 
         timeLimit -= Time.deltaTime;
@@ -83,7 +66,25 @@ public class NewBehaviourScript : MonoBehaviour
 
         int displayTime = Mathf.CeilToInt(timeLimit);
 
-        // ===== 上のタイマー =====
+        // ==========================
+        // 20秒・10秒表示
+        // ==========================
+
+        if (displayTime == 20 && !shown20)
+        {
+            shown20 = true;
+            StartCoroutine(ShowCenterNumber("20"));
+        }
+
+        if (displayTime == 10 && !shown10)
+        {
+            shown10 = true;
+            StartCoroutine(ShowCenterNumber("10"));
+        }
+
+        // ==========================
+        // 上のタイマー
+        // ==========================
 
         if (timeLimit <= 10f)
         {
@@ -106,23 +107,22 @@ public class NewBehaviourScript : MonoBehaviour
             timerText.text = "Time : " + displayTime;
         }
 
-        // ===== 残り5秒演出 =====
+        // ==========================
+        // 残り5秒演出
+        // ==========================
 
         if (timeLimit <= 5f && timeLimit > 0)
         {
             centerTimerText.gameObject.SetActive(true);
+
             if (!warningPlayed)
             {
                 warningPlayed = true;
 
-                //if (warningAudioSource != null)
-                //{
-                    Debug.Log("警告音");
-                    warningAudioSource.Play();
-                //}
+                Debug.Log("警告音");
+                warningAudioSource.Play();
             }
 
-            // 点滅
             bool centerBlink =
                 Mathf.FloorToInt(Time.time * 4) % 2 == 0;
 
@@ -137,27 +137,22 @@ public class NewBehaviourScript : MonoBehaviour
                     "<color=#00000000>" + displayTime + "</color>";
             }
 
-            // ===== 拡大縮小 =====
-
             float scale =
                 1f + Mathf.Abs(Mathf.Sin(Time.time * 10f)) * 0.3f;
 
             centerTimerText.transform.localScale =
                 Vector3.one * scale;
 
-            // ===== 白フラッシュ =====
-
             float alpha =
                 Mathf.Abs(Mathf.Sin(Time.time * 8f)) * 0.3f;
 
             Color flashColor = Color.white;
             flashColor.a = alpha;
-
-            flashImage.color = flashColor;
         }
-        else
+        else if (!isShowingCenterNumber)
         {
             centerTimerText.gameObject.SetActive(false);
+
             warningPlayed = false;
 
             if (warningAudioSource != null)
@@ -165,18 +160,12 @@ public class NewBehaviourScript : MonoBehaviour
                 warningAudioSource.Stop();
             }
 
-            // サイズ戻す
-            centerTimerText.transform.localScale =
-                Vector3.one;
-
-            // フラッシュ消す
-            Color flashColor = Color.white;
-            flashColor.a = 0f;
-
-            flashImage.color = flashColor;
+            centerTimerText.transform.localScale = Vector3.one;
         }
 
-        // ===== 時間切れ =====
+        // ==========================
+        // 時間切れ
+        // ==========================
 
         if (timeLimit <= 0)
         {
@@ -184,9 +173,29 @@ public class NewBehaviourScript : MonoBehaviour
         }
     }
 
+    IEnumerator ShowCenterNumber(string number)
+    {
+        isShowingCenterNumber = true;
+
+        centerTimerText.gameObject.SetActive(true);
+
+        centerTimerText.text = $"<color=red>{number}</color>";
+        centerTimerText.transform.localScale = Vector3.one * 2f;
+
+        yield return new WaitForSeconds(1f);
+
+        if (timeLimit > 5f)
+        {
+            centerTimerText.gameObject.SetActive(false);
+        }
+
+        isShowingCenterNumber = false;
+    }
+
     void GameOver()
     {
         isGameOver = true;
+
         if (warningAudioSource != null)
         {
             warningAudioSource.Stop();
@@ -194,7 +203,10 @@ public class NewBehaviourScript : MonoBehaviour
 
         warningPlayed = false;
         centerTimerText.gameObject.SetActive(false);
-        ClockVolume[] clocks = FindObjectsByType<ClockVolume>(FindObjectsSortMode.None);
+
+        ClockVolume[] clocks =
+            FindObjectsByType<ClockVolume>(FindObjectsSortMode.None);
+
         foreach (ClockVolume clock in clocks)
         {
             AudioSource audio = clock.GetComponent<AudioSource>();
@@ -204,23 +216,28 @@ public class NewBehaviourScript : MonoBehaviour
                 audio.Stop();
             }
         }
+
         Debug.Log("ゲーム終了");
+
         Time.timeScale = 0f;
         AudioListener.pause = false;
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
         if (gameOverPanel != null)
         {
             gameOverPanel.SetActive(true);
+
             if (SoundManager.instance != null && gameoverBGM != null)
             {
                 SoundManager.instance.PlayBGM(gameoverBGM);
             }
         }
     }
+
     public void StopWarningSE()
     {
-        isClear = true;
         if (warningAudioSource != null)
         {
             warningAudioSource.Stop();

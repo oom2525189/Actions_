@@ -198,7 +198,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &21680754
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12294,19 +12294,19 @@ MonoBehaviour:
   steps:
   - message: "WASD\u3067\u79FB\u52D5"
     conditionType: 1
-    nextDelay: 1.5
+    nextDelay: 5
   - message: "\u30DE\u30A6\u30B9\u3067\u8996\u70B9\u79FB\u52D5"
     conditionType: 2
-    nextDelay: 2
+    nextDelay: 5
   - message: "ESC\u3067\u30DD\u30FC\u30BA"
     conditionType: 4
     nextDelay: 0
   - message: "\u518D\u958B\u30DC\u30BF\u30F3\u3067\u30B2\u30FC\u30E0\u518D\u958B"
     conditionType: 5
-    nextDelay: 0
-  - message: "\u6A19\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
+    nextDelay: 5
+  - message: "\u7167\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
     conditionType: 6
-    nextDelay: 0
+    nextDelay: 5
   tutorialText: {fileID: 39073504}
 --- !u!114 &2087062157
 MonoBehaviour:
@@ -12354,7 +12354,6 @@ MonoBehaviour:
   timeLimit: 999
   timerText: {fileID: 1296118968}
   centerTimerText: {fileID: 1125399302}
-  flashImage: {fileID: 21680755}
   gameOverPanel: {fileID: 0}
   gameoverBGM: {fileID: 0}
   warningAudioSource: {fileID: 0}
