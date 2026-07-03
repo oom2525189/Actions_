@@ -5491,7 +5491,6 @@ MonoBehaviour:
   timeLimit: 20
   timerText: {fileID: 1909306225}
   centerTimerText: {fileID: 202316749}
-  flashImage: {fileID: 1835690504}
   gameOverPanel: {fileID: 204491169}
   gameoverBGM: {fileID: 8300000, guid: 2d935d51eb564d640a9a2c646e9d5a97, type: 3}
   warningAudioSource: {fileID: 858113514}
@@ -12043,6 +12042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: 9eb5651f6ae5c4149a00cf3555413896, type: 3}
   hahennPrefab: {fileID: 1201488668533155241, guid: 9c4747f07eb95824281074500e3cc8c0, type: 3}
+  hahenn: {fileID: 464979781588431326, guid: 325dd5233db1bc7459afd589c1e94636, type: 3}
 --- !u!1 &2093684620
 GameObject:
   m_ObjectHideFlags: 0
