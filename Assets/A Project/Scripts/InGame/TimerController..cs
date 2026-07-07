@@ -29,7 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Start");
+        
 
         if (warningAudioSource != null)
         {
@@ -119,7 +119,7 @@ public class NewBehaviourScript : MonoBehaviour
             {
                 warningPlayed = true;
 
-                Debug.Log("警告音");
+                
                 warningAudioSource.Play();
             }
 

@@ -16,9 +16,7 @@ public class PauseGame : MonoBehaviour
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        Debug.Log(time);
-        Debug.Log(kuria);
-        Debug.Log(kuria?.gamekuriaPanel);
+       
        
     }
 

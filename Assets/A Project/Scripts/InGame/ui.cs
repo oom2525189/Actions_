@@ -156,10 +156,7 @@ public class ui : MonoBehaviour
             // クリアパネル表示
             gamekuriaPanel.SetActive(true);
 
-            PlayerPrefs.SetInt($"Stage{stageNumber}Clear", 1);
-            PlayerPrefs.Save();
-
-            Debug.Log($"Stage{stageNumber}Clear を保存");
+            
         }
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(13f);
