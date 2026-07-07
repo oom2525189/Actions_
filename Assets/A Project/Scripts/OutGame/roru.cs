@@ -1,35 +1,3 @@
-//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-
-//public class roru : MonoBehaviour
-//{
-//    [SerializeField]
-//    RectTransform[] telops;
-
-//    [SerializeField]
-//    RectTransform startPoint;
-
-//    [SerializeField]
-//    RectTransform endPoint;
-
-//    void Update()
-//    {
-//        for (int i = 0; i < telops.Length; i++)
-//        {
-//            telops[i].localPosition += Vector3.up * .1f;
-
-//            if (telops[i].localPosition.y > endPoint.localPosition.y)
-//            {
-//                telops[i].localPosition = new Vector3(
-//                    telops[i].localPosition.x,
-//                    startPoint.localPosition.y,
-//                    telops[i].localPosition.z);
-//            }
-//        }
-//    }
-//}
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,11 +6,20 @@ public class CreditsScroller : MonoBehaviour
 {
     [SerializeField] RectTransform endPoint;
     [SerializeField] float scrollSpeed = 100f;
+    [SerializeField] GameObject skipText;
+
+    [SerializeField] float holdTime = 1f;
+
+    private float holdTimer = 0f;
 
     bool isFinished = false;
 
     void Update()
     {
+        if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            skipText.SetActive(true);
+        }
         if (isFinished) return;
 
         transform.localPosition += Vector3.up * scrollSpeed * Time.deltaTime;
@@ -51,6 +28,24 @@ public class CreditsScroller : MonoBehaviour
         {
             isFinished = true;
             StartCoroutine(ReturnToTitle());
+        }
+
+        if (skipText.activeSelf)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                holdTimer += Time.deltaTime;
+
+                if (holdTimer >= holdTime && !isFinished)
+                {
+                    isFinished = true;
+                    SceneManager.LoadScene("Title");
+                }
+            }
+            else
+            {
+                holdTimer = 0f;
+            }
         }
     }
 
