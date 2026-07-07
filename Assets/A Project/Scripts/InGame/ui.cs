@@ -87,6 +87,7 @@ public class ui : MonoBehaviour
                 {
                     Debug.Log("ダミー");
 
+
                     GameObject clock = hit.collider.gameObject;
 
                     // 数を減らす
