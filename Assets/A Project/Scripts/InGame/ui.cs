@@ -76,10 +76,11 @@ public class ui : MonoBehaviour
                     ClockManager.Instance.ClockDestroyed(clock);
 
                     // 時計を壊す
-                    Destroy(clock);
+                    Destroy(hit.collider.gameObject);
 
-                    isLoading = true;
+                    //isLoading = true;
                     StartCoroutine(LoadSceneDelay(1f));
+                    Debug.Log("早");
                 }
                 // Dummy
                 else if ((hitLayer & dummyLayer) != 0)
@@ -129,9 +130,9 @@ public class ui : MonoBehaviour
             Time.timeScale = 1f;
         }
 
-        System.Collections.IEnumerator LoadSceneDelay(float delay)
+  System.Collections.IEnumerator LoadSceneDelay(float delay)
         {
-        
+        Debug.Log("クリア");
         yield return new WaitForSeconds(delay);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;

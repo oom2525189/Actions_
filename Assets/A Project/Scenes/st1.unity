@@ -6259,7 +6259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   realClockText: {fileID: 1985814783}
-  dummyClockText: {fileID: 0}
+  dummyClockText: {fileID: 1985814783}
 --- !u!1 &1480141422
 GameObject:
   m_ObjectHideFlags: 0

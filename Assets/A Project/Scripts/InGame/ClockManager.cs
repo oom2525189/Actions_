@@ -62,7 +62,8 @@ public class ClockManager : MonoBehaviour
 
     void UpdateText()
     {
-        realClockText.text = $"本体：{realCount}";
+        
         dummyClockText.text = $"ダミー：{dummyCount}";
+        realClockText.text = $"本体：{realCount}";
     }
 }
