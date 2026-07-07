@@ -58,7 +58,8 @@ public class TutorialManager : MonoBehaviour
         }
         else
         {
-            tutorialText.text = "チュートリアル完了！";
+            tutorialText.text = "チュートリアル" +
+                "完了！";
             StartCoroutine(LoadSceneDelay(2f));
         }
         isProcessing = false;

@@ -257,32 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21680753}
   m_CullTransparentMesh: 1
---- !u!1 &22654903 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100004, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
-  m_PrefabInstance: {fileID: 1116423888}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &22654905
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22654903}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3031236, y: 0.11855046, z: 0.120304644}
-  m_Center: {x: 0, y: -0.000000033527623, z: 0.43827686}
 --- !u!1001 &34027444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -506,7 +480,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -135.17941, w: -31.385403}
+  m_margin: {x: -3.1349716, y: 0, z: -159.18422, w: -80.065895}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -528,7 +502,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39073503}
   m_LocalRotation: {x: -0, y: 0.00000008940696, z: 0.000000059604638, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00011062626}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 5.289626, y: 4.1471004, z: 4.1471}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -537,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -294, y: 389.00006}
+  m_AnchoredPosition: {x: -407, y: 389}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &48519789
@@ -6176,19 +6150,15 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
+    - {fileID: 6400002, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 400000, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1448556119}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100002, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1668759742}
-    - targetCorrespondingSourceObject: {fileID: 100004, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 22654905}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
 --- !u!1 &1125399299
 GameObject:
@@ -9478,32 +9448,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce7cad1a7b0c9a94ebe3e1de55ec3baa, type: 3}
---- !u!1 &1668759740 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100002, guid: 08256e30045fcfb4f8fafbfd423422d2, type: 3}
-  m_PrefabInstance: {fileID: 1116423888}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1668759742
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1668759740}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.08855037, y: 0.06611854, z: 0.88796526}
-  m_Center: {x: 0.0000000018626456, y: -0.0000000037252907, z: -0.065858096}
 --- !u!1001 &1677455218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12227,7 +12171,7 @@ MonoBehaviour:
     nextDelay: 0
   - message: "\u518D\u958B\u30DC\u30BF\u30F3\u3067\u30B2\u30FC\u30E0\u518D\u958B"
     conditionType: 5
-    nextDelay: 5
+    nextDelay: 0
   - message: "\u7167\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
     conditionType: 6
     nextDelay: 5
