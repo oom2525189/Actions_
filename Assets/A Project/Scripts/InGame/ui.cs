@@ -70,7 +70,13 @@ public class ui : MonoBehaviour
                 {
                     Debug.Log("当たった: " + hit.collider.name);
 
-                    Destroy(hit.collider.gameObject);
+                    GameObject clock = hit.collider.gameObject;
+
+                    // 数を減らす
+                    ClockManager.Instance.ClockDestroyed(clock);
+
+                    // 時計を壊す
+                    Destroy(clock);
 
                     isLoading = true;
                     StartCoroutine(LoadSceneDelay(1f));
@@ -80,7 +86,13 @@ public class ui : MonoBehaviour
                 {
                     Debug.Log("ダミー");
 
-                    Destroy(hit.collider.gameObject);
+                    GameObject clock = hit.collider.gameObject;
+
+                    // 数を減らす
+                    ClockManager.Instance.ClockDestroyed(clock);
+
+                    // 時計を壊す
+                    Destroy(clock);
                 }
                 else if ((hitLayer & Tutorial) != 0)
                 {
