@@ -120,17 +120,6 @@ public class ui : MonoBehaviour
         }
     }
 
-
-
-    IEnumerator HitStop(float time)
-        {
-            Time.timeScale = 0f;
-
-            yield return new WaitForSecondsRealtime(time);
-
-            Time.timeScale = 1f;
-        }
-
   System.Collections.IEnumerator LoadSceneDelay(float delay)
         {
         Debug.Log("クリア");
