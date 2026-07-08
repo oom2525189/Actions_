@@ -12169,10 +12169,10 @@ MonoBehaviour:
   - message: "ESC\u3067\u30DD\u30FC\u30BA"
     conditionType: 4
     nextDelay: 0
-  - message: "\u518D\u958B\u30DC\u30BF\u30F3\u3067\u30B2\u30FC\u30E0\u518D\u958B"
+  - message: "\u518D\u958B\u30DC\u30BF\u30F3\u3067\u30B2\u30FC\u30E0\n\u518D\u958B"
     conditionType: 5
     nextDelay: 0
-  - message: "\u7167\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
+  - message: "\u7167\u6E96\u3092\u76EE\u899A\u307E\u3057\u306B\n\u5408\u308F\u305B\u3066\u5DE6\u30AF\u30EA\u30C3\u30AF\uFF01"
     conditionType: 6
     nextDelay: 5
   tutorialText: {fileID: 39073504}
