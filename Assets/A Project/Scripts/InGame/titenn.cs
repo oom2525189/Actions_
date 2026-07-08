@@ -18,6 +18,13 @@ public class titenn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // tokeiが消えたら自分も消える
+        if (tokei == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (/*transform.position == tokei.transform.position*/
             Vector3.Distance(transform.position, tokei.transform.position) < 0.01f &&
             Vector3.Distance(transform.position, tokei.transform.position) < 0.01f)
