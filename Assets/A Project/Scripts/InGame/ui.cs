@@ -80,7 +80,7 @@ public class ui : MonoBehaviour
 
                     //isLoading = true;
                     StartCoroutine(LoadSceneDelay(1f));
-                    Debug.Log("早");
+                    
                 }
                 // Dummy
                 else if ((hitLayer & dummyLayer) != 0)
