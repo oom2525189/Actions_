@@ -6333,7 +6333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1144780495
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12383,7 +12383,7 @@ MonoBehaviour:
     m_Bits: 64
   rayRadius: 0.05
   stageNumber: 0
-  gamekuriaPanel: {fileID: 0}
+  gamekuriaPanel: {fileID: 1144780494}
   fadeImage: {fileID: 0}
   clearBGM: {fileID: 0}
 --- !u!114 &2087062158

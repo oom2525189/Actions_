@@ -7339,7 +7339,7 @@ GameObject:
   - component: {fileID: 1417940967}
   - component: {fileID: 1417940966}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: matumoto
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
