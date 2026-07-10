@@ -21,10 +21,13 @@ public class ui : MonoBehaviour
     [Header("クリア時に流すBGM")]
     [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
-   
 
+    NewBehaviourScript time;//取得したいスクリプトを宣言
     void Start()
     {
+        GameObject game = GameObject.Find("GameObject");
+        //取得したオブジェクトのスクリプトを宣言したスクリプトに入れる
+        time = game.GetComponent<NewBehaviourScript>();
         if (gamekuriaPanel != null)
         {
             gamekuriaPanel.SetActive(false);
@@ -71,7 +74,7 @@ public class ui : MonoBehaviour
                     Debug.Log("当たった: " + hit.collider.name);
 
                     GameObject clock = hit.collider.gameObject;
-
+                    time.timeLimit += time.timeLimit;
                     // 数を減らす
                     ClockManager.Instance.ClockDestroyed(clock);
 
