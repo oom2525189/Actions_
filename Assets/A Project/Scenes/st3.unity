@@ -3380,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0c16b205283e1d43b7e85603a8304d6, type: 3}
       propertyPath: m_Name
-      value: Meshy_AI_Time_Warrior_biped_Meshy_AI_Meshy_Merged_Animations
+      value: nattou
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0c16b205283e1d43b7e85603a8304d6, type: 3}
       propertyPath: m_Layer
