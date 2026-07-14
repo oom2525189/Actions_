@@ -1071,7 +1071,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -290.03748, y: 0, z: -280.0297, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3380,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0c16b205283e1d43b7e85603a8304d6, type: 3}
       propertyPath: m_Name
-      value: nattou
+      value: Meshy_AI_Time_Warrior_biped_Meshy_AI_Meshy_Merged_Animations
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b0c16b205283e1d43b7e85603a8304d6, type: 3}
       propertyPath: m_Layer
@@ -5440,7 +5440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1721811433}
-  distance: 3
+  distance: 5
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -7339,7 +7339,7 @@ GameObject:
   - component: {fileID: 1417940967}
   - component: {fileID: 1417940966}
   m_Layer: 0
-  m_Name: matumoto
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

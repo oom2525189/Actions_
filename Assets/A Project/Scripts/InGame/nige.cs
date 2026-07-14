@@ -33,7 +33,7 @@ public class nige : MonoBehaviour
     //[SerializeField] GameObject pl;
     void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name == "matumoto")
+        if (other.gameObject.name == "Player")
         {
             idou = true;
         }
@@ -41,7 +41,7 @@ public class nige : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "matumoto")
+        if (other.gameObject.name == "Player")
         {
 
             Invoke("ExecuteMove", 0.5f);

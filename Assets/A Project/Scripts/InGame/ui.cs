@@ -25,9 +25,6 @@ public class ui : MonoBehaviour
     NewBehaviourScript time;//取得したいスクリプトを宣言
     void Start()
     {
-        GameObject game = GameObject.Find("GameObject");
-        //取得したオブジェクトのスクリプトを宣言したスクリプトに入れる
-        time = game.GetComponent<NewBehaviourScript>();
         if (gamekuriaPanel != null)
         {
             gamekuriaPanel.SetActive(false);
@@ -74,14 +71,19 @@ public class ui : MonoBehaviour
                     Debug.Log("当たった: " + hit.collider.name);
 
                     GameObject clock = hit.collider.gameObject;
-                    time.timeLimit += time.timeLimit;
                     // 数を減らす
                     ClockManager.Instance.ClockDestroyed(clock);
 
                     // 時計を壊す
                     Destroy(hit.collider.gameObject);
 
-                    //isLoading = true;
+                    GameObject game = GameObject.Find("GameObject");
+                    //取得したオブジェクトのスクリプトを宣言したスクリプトに入れる
+                    time = game.GetComponent<NewBehaviourScript>();
+
+                    time.timeLimit += time.timeLimit;
+
+                        isLoading = true;
                     StartCoroutine(LoadSceneDelay(1f));
                     
                 }
@@ -90,7 +92,7 @@ public class ui : MonoBehaviour
                 {
                     Debug.Log("ダミー");
 
-
+                    
                     GameObject clock = hit.collider.gameObject;
 
                     // 数を減らす
