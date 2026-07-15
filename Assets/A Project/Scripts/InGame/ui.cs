@@ -22,6 +22,10 @@ public class ui : MonoBehaviour
     [SerializeField] private AudioClip clearBGM;
     private bool isLoading = false;
 
+    [SerializeField] private GameObject effectPrefab;
+    [SerializeField] private GameObject effectPrefa;
+    public AudioClip breakSound;
+
     NewBehaviourScript time;//取得したいスクリプトを宣言
     void Start()
     {
@@ -41,7 +45,7 @@ public class ui : MonoBehaviour
         LayerMask hitLayers =
             targetLayer |
             dummyLayer |
-            wallLayer|
+            wallLayer |
             Tutorial;
 
         // クリック時
@@ -71,6 +75,25 @@ public class ui : MonoBehaviour
                     Debug.Log("当たった: " + hit.collider.name);
 
                     GameObject clock = hit.collider.gameObject;
+
+                    float seVolume = PlayerPrefs.GetFloat("SE_VOLUME", 0.5f);
+                    AudioSource.PlayClipAtPoint(breakSound, clock.transform.position, seVolume);
+
+                    // プレハブ生成
+                    Instantiate(
+                        effectPrefab,
+                        clock.transform.position,
+                        clock.transform.rotation
+                    );
+
+                    // プレハブ生成
+                    Instantiate(
+                        effectPrefa,
+                        clock.transform.position,
+                        clock.transform.rotation
+                    );
+
+
                     // 数を減らす
                     ClockManager.Instance.ClockDestroyed(clock);
 
@@ -83,17 +106,28 @@ public class ui : MonoBehaviour
 
                     time.timeLimit += time.timeLimit;
 
-                        isLoading = true;
+                    isLoading = true;
                     StartCoroutine(LoadSceneDelay(1f));
-                    
+
                 }
                 // Dummy
                 else if ((hitLayer & dummyLayer) != 0)
                 {
                     Debug.Log("ダミー");
 
-                    
+
                     GameObject clock = hit.collider.gameObject;
+
+                    // プレハブ生成
+                    Instantiate(
+                        effectPrefab,
+                        clock.transform.position,
+                        clock.transform.rotation
+                    );
+
+                    float seVolume = PlayerPrefs.GetFloat("SE_VOLUME", 0.5f);
+                    AudioSource.PlayClipAtPoint(breakSound, clock.transform.position, seVolume);
+
 
                     // 数を減らす
                     ClockManager.Instance.ClockDestroyed(clock);
@@ -113,6 +147,23 @@ public class ui : MonoBehaviour
                         obj.transform.rotation
                     );
 
+                    float seVolume = PlayerPrefs.GetFloat("SE_VOLUME", 0.5f);
+                    AudioSource.PlayClipAtPoint(breakSound, obj.transform.position, seVolume);
+                    // プレハブ生成
+                    Instantiate(
+                        effectPrefab,
+                        obj.transform.position,
+                        obj.transform.rotation
+                    );
+
+                    // プレハブ生成
+                    Instantiate(
+                        effectPrefa,
+                        obj.transform.position,
+                        obj.transform.rotation
+                    );
+
+
                     // 元のオブジェクトを削除
                     Destroy(obj);
 
@@ -125,12 +176,12 @@ public class ui : MonoBehaviour
         }
     }
 
-  System.Collections.IEnumerator LoadSceneDelay(float delay)
-        {
+    System.Collections.IEnumerator LoadSceneDelay(float delay)
+    {
         Debug.Log("クリア");
         yield return new WaitForSeconds(delay);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         if (SoundManager.instance != null && clearBGM != null)
         {
             SoundManager.instance.PlayBGM(clearBGM);
@@ -150,25 +201,27 @@ public class ui : MonoBehaviour
             // クリアパネル表示
             gamekuriaPanel.SetActive(true);
 
-            
+
         }
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(13f);
         float t = 0f;
-
-        while (t < 1f)
+        if (stageNumber == 3)
         {
-            t += Time.unscaledDeltaTime;
+            while (t < 1f)
+            {
+                t += Time.unscaledDeltaTime;
 
-            Color c = fadeImage.color;
-            c.a = t;
-            fadeImage.color = c;
+                Color c = fadeImage.color;
+                c.a = t;
+                fadeImage.color = c;
 
-            yield return null;
+                yield return null;
+            }
+            Time.timeScale = 1;
+
+            SceneManager.LoadScene("enndororu");
         }
-        Time.timeScale = 1;
-
-        SceneManager.LoadScene("enndororu");
     }
 }
 

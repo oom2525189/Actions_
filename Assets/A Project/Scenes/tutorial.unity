@@ -12386,6 +12386,9 @@ MonoBehaviour:
   gamekuriaPanel: {fileID: 1144780494}
   fadeImage: {fileID: 0}
   clearBGM: {fileID: 0}
+  effectPrefab: {fileID: 1201488668533155241, guid: 9c4747f07eb95824281074500e3cc8c0, type: 3}
+  effectPrefa: {fileID: 464979781588431326, guid: 325dd5233db1bc7459afd589c1e94636, type: 3}
+  breakSound: {fileID: 8300000, guid: 9eb5651f6ae5c4149a00cf3555413896, type: 3}
 --- !u!114 &2087062158
 MonoBehaviour:
   m_ObjectHideFlags: 0
